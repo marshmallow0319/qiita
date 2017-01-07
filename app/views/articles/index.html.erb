@@ -1,0 +1,1977 @@
+<div class="header-container header-container-public" role="navigation">
+  <div data-react-class="T.HeaderContainer" data-react-props="{"user":{"profile_image_url":"https://qiita-image-store.s3.amazonaws.com/0/136530/profile-images/1473719981","team_only":false,"teams":[],"url_name":"marshmallow0319"},"team":null,"news":{"type":"News","content":"ストックの他に「いいね」が追加されました","url":"http://blog.qiita.com/post/153200849029/qiita-like-button"},"initial_unread_count":0,"siteid_image":"http://cdn.qiita.com/siteid-reverse.png","is_team_page":false,"on_team_setting":false,"show_post_menu":true,"show_search_menu":true,"is_fluid":false,"locale":"ja"}">
+    <header data-reactroot class="shared-header shared-header-public">
+      <div class="shared-header_inner">
+        <div class="shared-header_left">
+          <span class="shared-header_logo open">
+            <%= link_to root_path, class: "shared-header_logo_main" do%>
+              <span class="shared-header_logo_figure">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 26">
+                  <title>Qiita</title>
+                  <path d="M24.6 12.2C24.6 6.2 20 0 12.2 0 6.2 0 0 4.6 0 12.4c0 6 4.6 12.2 12.4 12.2 2.5 0 5-.8 7.1-2.3l3.6 3.6 1.6-1.6-3.4-3.4c2.1-2.3 3.3-5.3 3.3-8.7zm-12.4-10c5.7 0 10.2 4.4 10.2 10.1 0 4.9-3.8 10.1-10.1 10.1s-10.1-5.1-10.1-10c0-6.4 5.1-10.2 10-10.2zM30.5 7.1h2.1v17h-2.1zM31.5 4.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM40 4.8c-1 0-1.8-.8-1.8-1.8S39 1.2 40 1.2s1.8.8 1.8 1.8S41 4.8 40 4.8zM39 7.1h2.1v17H39zM53.7 24.4c-3.9 0-6.2-3-6.2-6v-16h2.1v4.7H57v2.1h-7.4v9.3c0 1.9 1.5 3.9 4.1 3.9.7 0 1.4-.2 2-.6l.2-.1 1 1.8-.2.1c-.9.5-2 .8-3 .8zM67.6 24.5c-5.7 0-9.1-4.5-9.1-8.9 0-5.7 4.5-9.1 8.9-9.1 2.3 0 4.1.8 5.4 2.3V7.1h2.1v17h-2.1v-1.9c-1.2 1.5-3 2.3-5.2 2.3zm-.2-15.9c-3.4 0-6.8 2.6-6.8 7 0 3.4 2.6 6.8 7 6.8 2 0 4-.9 5.3-2.5v-8.8c-1.4-1.6-3.3-2.5-5.5-2.5z"></path>
+                </svg>
+              </span>
+            <% end %>
+          </span>
+          <form class="navbar-form navbar-left search-form" action-"/search" method="get">
+            <div class="search-form_query-wrapper">
+              <input class="form-control search-form_query" placeholder="キーワードを入力" autocomplete="off" name="q" value style="width: 220px;">
+              <div class="search-form_wise-search-button" style="visibility: visible;">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+          </form>
+          <div class="navbar-text header-news hidden-xs hidden-sm">
+            <div class="header-news_label label label-warning">News</div>
+            <a class="navbar-link" target="_blank" href="#">
+              ストックの他に「いいね」が追加されました
+            </a>
+          </div>
+        </div>
+        <div class="shared-header_right">
+          <div class="shared-header_search-icon">
+            <a data-tiggle="model" data-target="#js-search-model">
+              <i class="fa fa-search"></i>
+            </a>
+          </div>
+          <div class="shared-header_search-model in modal fade" aria-hidden="false" id="js-search-model">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form action="/search" method="get">
+                    <input type="hidden" name="sort" id="sort" value="rel">
+                    <div class="row">
+                      <div class="col-xs-9">
+                        <input type="text" name="q" id="q" class="form-control">
+                      </div>
+                      <div class="col-xs-3">
+                        <input type="submit" name="commit" value="Search" class="btn btn-default btn-sm">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shared-header_new-item btn-group">
+            <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
+              <i class="fa fa-lg fa-edit"></i>
+              <!-- react-text: 36 -->
+              投稿する
+              <!-- /react-text -->
+            </a>
+            <a class="shared-header_new-item_btn dropdown-toggle btn">
+              <i class="fa fa-caret-down"></i>
+              <span class="shared-header_new-item_xs-edit">
+                <i class="fa fa-edit"></i>
+              </span>
+            </a>
+          </div>
+          <div class="shared-header_stock-items">
+            <a href="#">ストック一覧</a>
+          </div>
+          <div class="shared-header_stock-items_xs-stock">
+            <a href="#" title="ストック一覧">
+              <i class="fa fa-folder"></i>
+            </a>
+          </div>
+          <div class="shared-header_notifications">
+            <div class="global-notifications open active">
+              <div class="global-notifications__surface">
+                <div class="global-notifications_count">
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shared-header_user open">
+            <a class="shared-header_user_clickable">
+              <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
+            </a>
+            <ul class="dropdown-menu shared-header_user_dropdown">
+              <li>
+                <a href="#">
+                  <i class="fa fa-fw fa-user"></i>
+                  <!-- react-text: 57 -->
+                  マイページ
+                  <!-- /react-text -->
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa fa-fw fa-cog"></i>
+                  <!-- react-text: 61 -->
+                  設定
+                  <!-- /react-text -->
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa fa-fw fa-question"></i>
+                  <!-- react-text: 65 -->
+                  ヘルプ
+                  <!-- /react-text -->
+                </a>
+                <!-- <a href="/users/sign_out" rel="nofollow" data-method="post"> -->
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-fw fa-sign-out"></i>
+                  ログアウト
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div id="main">
+  <div class="container feed-page">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="feed-page_header">
+          <h2>プログラミング知識を共有しよう。</h2>
+          <a class="btn btn-primary" track="click" data-label="HomeIndexToItemsNews" href="/drafts/new">ノウハウ・TIpsを投稿する</a>
+        </div>
+        <div class="stream-container">
+          <nav>
+            <ul class="nav nav-tabs stream-container_tabs">
+              <li class="following-tab active" data-type="following">
+                <a href="/">フィード</a>
+              </li>
+              <li class="public-tab" data-type="public">
+                <a href="/items">すべての投稿</a>
+              </li>
+              <li class="mine-tab pull-right" data-type="mine">
+                <a href="/mine">
+                  自分の投稿
+                  <span class="label label-info">0</span>
+                </a>
+              </li>
+              <li class="stock-tab pull-right" data-type="stock">
+                <a href="/stock">ストック</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="stream-container_streams feed-activities">
+            <div class="following-stream active">
+              <div>
+                <div class="flush-button active">
+                  0件の新しいアクティビティ
+                </div>
+                <div class="acrivities">
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <%= image_tag("user-avatar.png", class: "user-icon", title: "テスト") %>
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                  <div class="item-box track">
+                    <div class="vertical-close-button close">
+                      <i class="fa fa-angle-double-right"></i>
+                    </div>
+                    <div class="item-box-container-inner">
+                      <div class="action-user-icon action">
+                        <div class="action-icon">
+                          <i class="fa fa-tag"></i>
+                        </div>
+                        <a href="#" title="テスト">
+                          <img src="#" class="user-icon" title="テスト">
+                        </a>
+                      </div>
+                      <div class="item-box-area">
+                        <div class="item-box-header">
+                          <div class="action">
+                            <span class="user">
+                              <a href="#">テスト</a>
+                            </span>
+                            に新しい投稿がありました
+                          </div>
+                          <div class="item-box-title">
+                            <h1>
+                              <a href="#" title="テスト">
+                                テスト
+                              </a>
+                            </h1>
+                            <ul class="item-box_tag-list list-unstyled">
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                              <li>
+                                <a href="#">テスト</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="item-status-box">
+                            <ul class="unstyled">
+                              <li>
+                                <i class="fa fa-like"></i>
+                                0
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <i class="fa fa-comment-o"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="item-body-wrapper">
+                          <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                            ここに記事が入ります
+                          </div>
+                        </div>
+                      </div>
+                      <div class="loading"></div>
+                    </div>
+                    <fieldset class="toggle-button-field">
+                      <legend class="toggle-button">
+                        <span class="expand">
+                          <i class="fa fa-angle-double-down"></i>
+                        </span>
+                        <span class="close">
+                          <i class="fa fa-angle-double-up"></i>
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="tail">
+                  <div class="more-button btn btn-default btn-block" tabindex="0">もっと見る</div>
+                </div>
+              </div>
+            </div>
+            <div class="public-stream">
+              <div>
+                <div class="circle-loading">
+                  <p>読み込み中</p>
+                  <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stock-stream">
+              <form action="/search" class="stream_search-form" method="GET">
+                <div>
+                  <input placeholder="ストック検索" class="stream_search-form_text-field js-stream_search-form_text-field">
+                  <button type="submit" class="btn stream_search-form_search-button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+                <input type="hidden" name="q" class="js-stream_search-form_search-query" value>
+                <input type="hidden" name="stocked" value="1">
+              </form>
+              <div>
+                <div class="circle-loading">
+                  <p>読み込み中</p>
+                  <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mine-stream">
+              <form action="/search" class="stream_search-form" method="GET">
+                <div>
+                  <input placeholder="自分の投稿の中から検索" class="stream_search-form_text-field js-stream_search-form_text-field">
+                  <button type="submit" class="btn stream_search-form_search-button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+                <input type="hidden" name="q" class="js-stream_search-form_search-query" value="user:ここにアカウント名">
+              </form>
+              <div>
+                <div class="circle-loading">
+                  <p>読み込み中</p>
+                  <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="kobito-ad">
+          <div class="wrapper">
+            <h3>
+              <a target="_blank" href="#">プログラマのメモ用途に特化したMacアプリ「Kobito」</a>
+            </h3>
+            <p class="text-right">
+              <small>Powered by Qiita</small>
+            </p>
+            <ul class="list-unstyled">
+              <li>Markdownとリアルタイムプレビューで快適に入力</li>
+              <li>シンタックスハイライトでコードをきれいに記録</li>
+              <li>ボタンひとつで簡単web公開</li>
+            </ul>
+            <a target="_blank" href="#">詳細を見る</a>
+          </div>
+        </div>
+        <div class="user-info">
+          <div class="user-info_left">
+            <a href="#">
+              <%= image_tag("user-avatar.png", class: "user-info_avatar") %>
+            </a>
+          </div>
+          <div class="user-info_right">
+            <div class="user-info_names">
+              <div class="user-info_url-name">
+                <a href="#">テスト</a>
+              </div>
+            </div>
+            <div class="user-info_stats">
+              <div class="user-info_posts-count">
+                0
+                <span class="user-info_stats_unit">投稿</span>
+              </div>
+              <div class="user-info_contribution">
+                <span class="user-info_contribution_value">0</span>
+                <span class="user-info_stats_unit">Contribution</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="category-navigation_menu">
+          <a class="category-navigation_menu-item category-navigation_menu-item-selected" href="/">
+            <i class="fa fa-fw fa-list-ul"></i>
+            フィード
+          </a>
+          <a class="category-navigation_menu-item" href="/organizations">
+            <i class="fa fa-fw fa-building-o"></i>
+            Organization一覧
+          </a>
+          <a class="category-navigation_menu-item" href="/popular-items">
+            <i class="fa fa-fw fa-line-chart"></i>
+            人気の投稿
+            <span class="label label-info">beta</span>
+          </a>
+          <a class="category-navigation_menu-item" href="/advent-calendar/2016">
+            <i class="fa fa-fw fa-calendar"></i>
+            Advent Calendar
+          </a>
+        </nav>
+        <div class="new-user-page-profile_info">
+          <div class="new-user-page-profile_info_heading">
+            <i class="fa fa-fw fa-user-plus"></i>
+            知り合いかも
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <ul class="list-inline new-user-page-profile_followees">
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <%= image_tag("user-avatar.png", class: "new-user-page-profile_followees_icon", size: "20x20", alt: "テスト") %>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="テスト">
+                  <a href="#">
+                    <img alt="テスト" class="new-user-page-profile_followees_icon" src="#" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer_inner clearfix">
+    <div class="footer_container clearfix">
+      <ul class="footer__links_left">
+        <li class="footer_link">
+          <a class="footer_copyright" href="#">© 2016 Increments Inc.</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">利用規約</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">プライバシー</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">ヘルプ</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">お問い合わせ</a>
+        </li>
+      </ul>
+      <ul class="footer__links_right">
+        <li class="footer_link">
+          <a href="#">Qiitaとは</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">ブログ</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">API</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Team</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Kobito</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Career</a>
+        </li>
+        <li class="footer_link">
+          <a class="js-public-form-feedback-link" data-target=".js-feedback-form" data-toggle="modal" href>
+            <i class="fa fa-heart"></i>ご意見<i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
