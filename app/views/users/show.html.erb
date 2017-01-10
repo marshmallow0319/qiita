@@ -1,0 +1,1166 @@
+<div class="header-container header-container-public" role="navigation">
+  <div data-react-class="T.HeaderContainer" data-react-props="{"user":{"profile_image_url":"https://qiita-image-store.s3.amazonaws.com/0/136530/profile-images/1473719981","team_only":false,"teams":[],"url_name":"marshmallow0319"},"team":null,"news":{"type":"News","content":"ストックの他に「いいね」が追加されました","url":"http://blog.qiita.com/post/153200849029/qiita-like-button"},"initial_unread_count":0,"siteid_image":"http://cdn.qiita.com/siteid-reverse.png","is_team_page":false,"on_team_setting":false,"show_post_menu":true,"show_search_menu":true,"is_fluid":false,"locale":"ja"}">
+    <header data-reactroot class="shared-header shared-header-public">
+      <div class="shared-header_inner">
+        <div class="shared-header_left">
+          <span class="shared-header_logo open">
+            <%= link_to root_path, class: "shared-header_logo_main" do%>
+              <span class="shared-header_logo_figure">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 26">
+                  <title>Qiita</title>
+                  <path d="M24.6 12.2C24.6 6.2 20 0 12.2 0 6.2 0 0 4.6 0 12.4c0 6 4.6 12.2 12.4 12.2 2.5 0 5-.8 7.1-2.3l3.6 3.6 1.6-1.6-3.4-3.4c2.1-2.3 3.3-5.3 3.3-8.7zm-12.4-10c5.7 0 10.2 4.4 10.2 10.1 0 4.9-3.8 10.1-10.1 10.1s-10.1-5.1-10.1-10c0-6.4 5.1-10.2 10-10.2zM30.5 7.1h2.1v17h-2.1zM31.5 4.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM40 4.8c-1 0-1.8-.8-1.8-1.8S39 1.2 40 1.2s1.8.8 1.8 1.8S41 4.8 40 4.8zM39 7.1h2.1v17H39zM53.7 24.4c-3.9 0-6.2-3-6.2-6v-16h2.1v4.7H57v2.1h-7.4v9.3c0 1.9 1.5 3.9 4.1 3.9.7 0 1.4-.2 2-.6l.2-.1 1 1.8-.2.1c-.9.5-2 .8-3 .8zM67.6 24.5c-5.7 0-9.1-4.5-9.1-8.9 0-5.7 4.5-9.1 8.9-9.1 2.3 0 4.1.8 5.4 2.3V7.1h2.1v17h-2.1v-1.9c-1.2 1.5-3 2.3-5.2 2.3zm-.2-15.9c-3.4 0-6.8 2.6-6.8 7 0 3.4 2.6 6.8 7 6.8 2 0 4-.9 5.3-2.5v-8.8c-1.4-1.6-3.3-2.5-5.5-2.5z"></path>
+                </svg>
+              </span>
+            <% end %>
+          </span>
+          <form class="navbar-form navbar-left search-form" action-"/search" method="get">
+            <div class="search-form_query-wrapper">
+              <input class="form-control search-form_query" placeholder="キーワードを入力" autocomplete="off" name="q" value style="width: 220px;">
+              <div class="search-form_wise-search-button" style="visibility: visible;">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+          </form>
+          <div class="navbar-text header-news hidden-xs hidden-sm">
+            <div class="header-news_label label label-warning">News</div>
+            <a class="navbar-link" target="_blank" href="#">
+              ストックの他に「いいね」が追加されました
+            </a>
+          </div>
+        </div>
+        <div class="shared-header_right">
+          <div class="shared-header_search-icon">
+            <a data-tiggle="model" data-target="#js-search-model">
+              <i class="fa fa-search"></i>
+            </a>
+          </div>
+          <div class="shared-header_search-model in modal fade" aria-hidden="false" id="js-search-model">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form action="/search" method="get">
+                    <input type="hidden" name="sort" id="sort" value="rel">
+                    <div class="row">
+                      <div class="col-xs-9">
+                        <input type="text" name="q" id="q" class="form-control">
+                      </div>
+                      <div class="col-xs-3">
+                        <input type="submit" name="commit" value="Search" class="btn btn-default btn-sm">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shared-header_new-item btn-group">
+            <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
+              <i class="fa fa-lg fa-edit"></i>
+              <!-- react-text: 36 -->
+              投稿する
+              <!-- /react-text -->
+            </a>
+            <a class="shared-header_new-item_btn dropdown-toggle btn">
+              <i class="fa fa-caret-down"></i>
+              <span class="shared-header_new-item_xs-edit">
+                <i class="fa fa-edit"></i>
+              </span>
+            </a>
+          </div>
+          <div class="shared-header_stock-items">
+            <a href="#">ストック一覧</a>
+          </div>
+          <div class="shared-header_stock-items_xs-stock">
+            <a href="#" title="ストック一覧">
+              <i class="fa fa-folder"></i>
+            </a>
+          </div>
+          <div class="shared-header_notifications">
+            <div class="global-notifications open active">
+              <div class="global-notifications__surface">
+                <div class="global-notifications_count">
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shared-header_user open">
+            <a class="shared-header_user_clickable">
+              <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
+            </a>
+            <ul class="dropdown-menu shared-header_user_dropdown">
+              <li>
+                <a href="#">
+                  <i class="fa fa-fw fa-user"></i>
+                  <!-- react-text: 57 -->
+                  マイページ
+                  <!-- /react-text -->
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa fa-fw fa-cog"></i>
+                  <!-- react-text: 61 -->
+                  設定
+                  <!-- /react-text -->
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa fa-fw fa-question"></i>
+                  <!-- react-text: 65 -->
+                  ヘルプ
+                  <!-- /react-text -->
+                </a>
+                <!-- <a href="/users/sign_out" rel="nofollow" data-method="post"> -->
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-fw fa-sign-out"></i>
+                  ログアウト
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div id="main">
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="#">
+  <div class="container new-user-page" itemscope itemtype="http://schema.org/Person">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-12 new-user-page-profile">
+        <div class="new-user-page-profile_avatar">
+          <%= image_tag("user-avatar.png", size: "270x270")%>
+        </div>
+        <div class="new-user-page-profile_header">
+          <h3 class="new-user-page-profile_full-name">
+            <span itemprop="family-name">苗字</span>
+            <span itemprop="given-name">名前</span>
+          </h3>
+          <h4 class="new-user-page-profile_name">
+            ここはusername
+          </h4>
+          <ul class="list-inline new-user-page-profile_social-links">
+            <li class="new-user-page-profile_social-link-facebook">
+              <a href="#" target="_blank">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+            </li>
+            <li class="new-user-page-profile_social-link-google-plus">
+              <a href="#" target="_blank">
+                <i class="fa fa-google-plus-square"></i>
+              </a>
+            </li>
+            <li class="new-user-page-profile_social-link-linkedin">
+              <a href="#" target="_blank">
+                <i class="fa fa-linkedin-square"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="new-user-page-profile_info">
+          <div class="new-user-page-profile_info_body new-user-page-profile_description">説明が入る</div>
+          <div class="new-user-page-profile_info_body">
+            <i class="fa fa-fw fa-envelope"></i>
+            <a href="mailto:メールアドレス" itemprop="email">
+              ユーザのメールアドレスを表示
+            </a>
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <i class="fa fa-fw fa-link"></i>
+            <a href="#" rel="me nofollow" itemprop="url" target="_blank">
+              ユーザのurlを表示
+            </a>
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <i class="fa fa-fw fa-building-o"></i>
+            ユーザの会社名かな
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <i class="fa fa-fw fa-map-marker"></i>
+            ユーザの住所かな
+          </div>
+          <a class="new-user-page-profile_info_body-edit" href="#">
+            <i class="fa fa-cog"></i>
+            プロフィールを編集する
+          </a>
+        </div>
+        <div class="new-user-page-profile_info">
+          <div class="new-user-page-profile_info_heading">
+            <i class="fa fa-fw fa-tags"></i>
+            フォロー中のタグ
+            <span class="new-user-page-profile_count">
+              <a href="#">3</a>
+            </span>
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <ul class="list-inline tag-list new-user-page-profile_following-tags">
+              <li class="tag-list_item">
+                <a href="#">
+                  <span>
+                    <img src="#">
+                  </span>
+                  タグ名
+                </a>
+              </li>
+              <li class="tag-list_item">
+                <a href="#">
+                  <span>
+                    <img src="#">
+                  </span>
+                  タグ名
+                </a>
+              </li>
+              <li class="tag-list_item">
+                <a href="#">
+                  <span>
+                    <img src="#">
+                  </span>
+                  タグ名
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="new-user-page-profile_info">
+          <div class="new-user-page-profile_info_heading">
+            <i class="fa fa-fw fa-users"></i>
+            フォロー中のユーザー
+            <span class="new-user-page-profile_count">
+              <a href="#">3</a>
+            </span>
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <ul class="list-inline new-user-page-profile_followees">
+              <li itemprop="follows" itemscope itemtype="http://schema.org/Person">
+                <meta content="ユーザ名" itemprop="name">
+                <div class="js-hovercard" data-hovercard-target-name="ユーザ名">
+                  <a itemprop="url" href="ユーザページのurl">
+                    <img src="#" alt="ユーザ名" itemprop="image" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li itemprop="follows" itemscope itemtype="http://schema.org/Person">
+                <meta content="ユーザ名" itemprop="name">
+                <div class="js-hovercard" data-hovercard-target-name="ユーザ名">
+                  <a itemprop="url" href="ユーザページのurl">
+                    <img src="#" alt="ユーザ名" itemprop="image" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li itemprop="follows" itemscope itemtype="http://schema.org/Person">
+                <meta content="ユーザ名" itemprop="name">
+                <div class="js-hovercard" data-hovercard-target-name="ユーザ名">
+                  <a itemprop="url" href="ユーザページのurl">
+                    <img src="#" alt="ユーザ名" itemprop="image" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="new-user-page-profile_info">
+          <div class="new-user-page-profile_info_heading">
+            <i class="fa fa-fw fa-user-plus"></i>
+            知り合いかも
+          </div>
+          <div class="new-user-page-profile_info_body">
+            <ul class="list-inline new-user-page-profile_followees">
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="js-hovercard" data-hovercard-target-name="知り合いかもな名前">
+                  <a href="#">
+                    <img src="ユーザアイコン" alt="ユーザ名" class="new-user-page-profile_followees_icon" width="20" height="20">
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-p col-xs-12">
+        <div class="user-activity-chart" data-chart="contribution" data-props="{"axis":{"x":{"type":"timeseries"},"y":{"min":0,"max":1,"tick":{"values":[0,0,1]}}},"data":{"columns":[["date","2016-12-11","2016-12-12","2016-12-13","2016-12-14","2016-12-15","2016-12-16","2016-12-17","2016-12-18","2016-12-19","2016-12-20","2016-12-21","2016-12-22","2016-12-23","2016-12-24","2016-12-25","2016-12-26","2016-12-27","2016-12-28","2016-12-29","2016-12-30","2016-12-31","2017-01-01","2017-01-02","2017-01-03","2017-01-04","2017-01-05","2017-01-06","2017-01-07","2017-01-08","2017-01-09"],["contribution",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"type":"area","hide":"date","x":"date","axes":{"contribution":"y"}},"grid":{"x":{"lines":[]},"y":{"show":true}},"legend":{"hide":true},"padding":{"right":10}}">
+          <div class="user-activity-chart_svg c3" style="max-height: 270px; position: relative;">
+            <!-- <svg width="850" height="270" style="overflow: hidden;">
+              <defs>
+                <clipPath id="c3-1483891397446-clip">
+                  <rect width="809" height="216"></rect>
+                </clipPath>
+                <clipPath id="c3-1483891397446-clip-xaxis">
+                  <rect x="-31" y="-20" width="871" height="70"></rect>
+                </clipPath>
+                <clipPath id="c3-1483891397446-clip-yaxis">
+                  <rect x="-29" y="-4" width="50" height="240"></rect>
+                </clipPath>
+                <clipPath id="c3-1483891397446-clip-grid">
+                  <rect width="809" height="216"></rect>
+                </clipPath>
+                <clipPath id="c3-1483891397446-clip-subchart">
+                  <rect width="809"></rect>
+                </clipPath>
+              </defs>
+              <g transform="translate(30.5,4.5)">
+                <text class="c3-text c3-empty" text-anchor="middle" dominant-baseline="middle" x="404.5" y="108" style="opacity: 0;"></text>
+                <rect class="c3-zoom-rect" width="809" height="216" style="opacity: 0;"></rect>
+                <g clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip)" class="c3-regions" style="visibility: visible;"></g>
+                <g clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip-grid)" class="c3-grid" style="visibility: visible;">
+                  <g class="c3-ygrids">
+                    <line class="c3-ygrid" x1="0" x2="809" y1="199" y2="199"></line>
+                    <line class="c3-ygrid" x1="0" x2="809" y1="199" y2="199"></line>
+                    <line class="c3-ygrid" x1="0" x2="809" y1="19" y2="19"></line>
+                  </g>
+                  <g class="c3-xgrid-focus">
+                    <line class="c3-xgrid-focus" x1="802" x2="802" y1="0" y2="216" style="visibility: hidden;"></line>
+                  </g>
+                </g>
+                <g-clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip)" class="c3-chart">
+                  <g class="c3-event-rects c3-event-rects-single" style="fill-opacity: 0;">
+                    <rect class=" c3-event-rect c3-event-rect-0" x="4" y="0" width="18" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-1" x="22" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-2" x="49.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-3" x="76.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-4" x="104" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-5" x="131.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-6" x="159" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-7" x="186.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-8" x="213.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-9" x="241" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-10" x="268.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-11" x="295.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-12" x="323" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-13" x="350.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-14" x="377.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-15" x="405" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-16" x="432.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-17" x="459.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-18" x="487" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-19" x="514.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-20" x="541.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-21" x="569" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-22" x="596.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-23" x="623.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-24" x="651" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-25" x="678.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-26" x="706" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-27" x="733.5" y="0" width="27" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-28" x="760.5" y="0" width="27.5" height="216"></rect>
+                    <rect class=" c3-event-rect c3-event-rect-29" x="788" y="0" width="17.5" height="216"></rect>
+                  </g>
+                  <g class="c3-chart-bars">
+                    <g class="c3-chart-bar c3-target c3-target-contribution" style="opacity: 1; pointer-events: none;">
+                      <g class=" c3-shapes c3-shapes-contribution c3-bars c3-bars-contribution" style="cursor: pointer;"></g>
+                    </g>
+                  </g>
+                  <g class="c3-chart-lines">
+                    <g class="c3-chart-line c3-target c3-target-contribution" style="opacity: 1; pointer-events: none;">
+                      <g class=" c3-shapes c3-shapes-contribution c3-lines c3-lines-contribution">
+                        <path class=" c3-shape c3-shape c3-line c3-line-contribution" style="opacity: 1;" d="M8,198.08333333333334L36,198.08333333333334L63,198.08333333333334L90,198.08333333333334L118,198.08333333333334L145,198.08333333333334L173,198.08333333333334L200,198.08333333333334L227,198.08333333333334L255,198.08333333333334L282,198.08333333333334L309,198.08333333333334L337,198.08333333333334L364,198.08333333333334L391,198.08333333333334L419,198.08333333333334L446,198.08333333333334L473,198.08333333333334L501,198.08333333333334L528,198.08333333333334L555,198.08333333333334L583,198.08333333333334L610,198.08333333333334L637,198.08333333333334L665,198.08333333333334L692,198.08333333333334L720,198.08333333333334L747,198.08333333333334L774,198.08333333333334L802,198.08333333333334"></path>
+                      </g>
+                      <g class=" c3-shapes c3-shapes-contribution c3-areas c3-areas-contribution">
+                        <path class=" c3-shape c3-shape c3-area c3-area-contribution" style="opacity: 0.2;" d="M8,198.08333333333334L36,198.08333333333334L63,198.08333333333334L90,198.08333333333334L118,198.08333333333334L145,198.08333333333334L173,198.08333333333334L200,198.08333333333334L227,198.08333333333334L255,198.08333333333334L282,198.08333333333334L309,198.08333333333334L337,198.08333333333334L364,198.08333333333334L391,198.08333333333334L419,198.08333333333334L446,198.08333333333334L473,198.08333333333334L501,198.08333333333334L528,198.08333333333334L555,198.08333333333334L583,198.08333333333334L610,198.08333333333334L637,198.08333333333334L665,198.08333333333334L692,198.08333333333334L720,198.08333333333334L747,198.08333333333334L774,198.08333333333334L802,198.08333333333334L802,198.08333333333334L774,198.08333333333334L747,198.08333333333334L720,198.08333333333334L692,198.08333333333334L665,198.08333333333334L637,198.08333333333334L610,198.08333333333334L583,198.08333333333334L555,198.08333333333334L528,198.08333333333334L501,198.08333333333334L473,198.08333333333334L446,198.08333333333334L419,198.08333333333334L391,198.08333333333334L364,198.08333333333334L337,198.08333333333334L309,198.08333333333334L282,198.08333333333334L255,198.08333333333334L227,198.08333333333334L200,198.08333333333334L173,198.08333333333334L145,198.08333333333334L118,198.08333333333334L90,198.08333333333334L63,198.08333333333334L36,198.08333333333334L8,198.08333333333334Z"></path>
+                      </g>
+                      <g class=" c3-selected-circles c3-selected-circles-contribution"></g>
+                      <g class=" c3-shapes c3-shapes-contribution c3-circles c3-circles-contribution" style="cursor: pointer;">
+                        <circle class="c3-shape c3-shape-0 c3-circle c3-circle-0" r="2.5" style="opacity: 1;" cx="8" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-1 c3-circle c3-circle-1" r="2.5" style="opacity: 1;" cx="36" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-2 c3-circle c3-circle-2" r="2.5" style="opacity: 1;" cx="63" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-3 c3-circle c3-circle-3" r="2.5" style="opacity: 1;" cx="90" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-4 c3-circle c3-circle-4" r="2.5" style="opacity: 1;" cx="118" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-5 c3-circle c3-circle-5" r="2.5" style="opacity: 1;" cx="145" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-6 c3-circle c3-circle-6" r="2.5" style="opacity: 1;" cx="173" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-7 c3-circle c3-circle-7" r="2.5" style="opacity: 1;" cx="200" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-8 c3-circle c3-circle-8" r="2.5" style="opacity: 1;" cx="227" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-9 c3-circle c3-circle-9" r="2.5" style="opacity: 1;" cx="255" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-10 c3-circle c3-circle-10" r="2.5" style="opacity: 1;" cx="282" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-11 c3-circle c3-circle-11" r="2.5" style="opacity: 1;" cx="309" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-12 c3-circle c3-circle-12" r="2.5" style="opacity: 1;" cx="337" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-13 c3-circle c3-circle-13" r="2.5" style="opacity: 1;" cx="364" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-14 c3-circle c3-circle-14" r="2.5" style="opacity: 1;" cx="391" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-15 c3-circle c3-circle-15" r="2.5" style="opacity: 1;" cx="419" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-16 c3-circle c3-circle-16" r="2.5" style="opacity: 1;" cx="446" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-17 c3-circle c3-circle-17" r="2.5" style="opacity: 1;" cx="473" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-18 c3-circle c3-circle-18" r="2.5" style="opacity: 1;" cx="501" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-19 c3-circle c3-circle-19" r="2.5" style="opacity: 1;" cx="528" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-20 c3-circle c3-circle-20" r="2.5" style="opacity: 1;" cx="555" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-21 c3-circle c3-circle-21" r="2.5" style="opacity: 1;" cx="583" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-22 c3-circle c3-circle-22" r="2.5" style="opacity: 1;" cx="610" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-23 c3-circle c3-circle-23" r="2.5" style="opacity: 1;" cx="637" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-24 c3-circle c3-circle-24" r="2.5" style="opacity: 1;" cx="665" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-25 c3-circle c3-circle-25" r="2.5" style="opacity: 1;" cx="692" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-26 c3-circle c3-circle-26" r="2.5" style="opacity: 1;" cx="720" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-27 c3-circle c3-circle-27" r="2.5" style="opacity: 1;" cx="747" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-28 c3-circle c3-circle-28" r="2.5" style="opacity: 1;" cx="774" cy="198.08333333333334"></circle>
+                        <circle class="c3-shape c3-shape-29 c3-circle c3-circle-29" r="2.5" style="opacity: 1;" cx="802" cy="198.08333333333334"></circle>
+                      </g>
+                    </g>
+                  </g>
+                  <g class="c3-chart-arcs" transform="translate(404.5,103)">
+                    <text class="c3-chart-arcs-title" style="text-anchor: middle; opacity: 0;"></text>
+                  </g>
+                  <g class="c3-chart-texts">
+                    <g class="c3-chart-text c3-target c3-target-contribution" style="opacity: 1; pointer-events: none;">
+                      <g class=" c3-texts c3-texts-contribution"></g>
+                    </g>
+                  </g>
+                </g>
+                <g clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip-grid)" class="c3-grid c3-grid-lines">
+                  <g class="c3-xgrid-lines"></g>
+                  <g class="c3-ygrid-lines"></g>
+                </g>
+                <g class="c3-axis c3-axis-x" clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip-xaxis)" transform="translate(0,216)" style="visibility: visible; opacity: 1;">
+                  <text class="c3-axis-x-label" transform="" style="text-anchor: end;" x="809" dx="-0.5em" dy="-0.5em"></text>
+                  <g class="tick" transform="translate(8, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/11</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(36, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/12</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(63, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/13</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(90, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/14</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(118, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/15</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(145, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/16</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(173, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/17</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(200, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/18</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(227, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/19</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(255, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/20</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(282, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/21</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(309, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/22</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(337, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/23</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(364, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/24</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(391, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/25</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(419, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/26</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(446, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/27</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(473, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/28</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(501, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/29</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(528, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/30</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(555, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/31</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(583, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">2017/1/1</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(610, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/2</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(637, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/3</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(665, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">1/4</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(692, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/5</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(720, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/6</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(747, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/7</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(774, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">1/8</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(802, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/9</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M0,6V0H809V6"></path>
+                </g>
+                <g class="c3-axis c3-axis-y" clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip-yaxis)" transform="translate(0,0)" style="visibility: visible; opacity: 1;">
+                  <text class="c3-axis-y-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="1.2em"></text>
+                  <g class="tick" transform="translate(0,199)" style="opacity: 1;">
+                    <line x2="-6"></line>
+                    <text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">0</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,19)" style="opacity: 1;">
+                    <line x2="-6"></line>
+                    <text x="-9" y="0" style="text-anchor: end;">
+                      <tspan x="-9" dy="3">1</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M-6,1H0V216H-6"></path>
+                </g>
+                <g class="c3-axis c3-axis-y2" transform="translate(809,0)" style="visibility: hidden; opacity: 1;">
+                  <text class="c3-axis-y2-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="-0.5em"></text>
+                  <g class="tick" transform="translate(0,216)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,195)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.1</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,173)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.2</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,152)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.3</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,130)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.4</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,109)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.5</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,87)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.6</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,66)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.7</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,44)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.8</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,23)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">0.9</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(0,1)" style="opacity: 1;">
+                    <line x2="6" y2="0"></line>
+                    <text x="9" y="0" style="text-anchor: start;">
+                      <tspan x="9" dy="3">1</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M6,1H0V216H6"></path>
+                </g>
+              </g>
+              <g transform="translate(20.5,270.5)" style="visibility: hidden;">
+                <g clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip-subchart)" class="c3-chart">
+                  <g class="c3-chart-bars"></g>
+                  <g class="c3-chart-lines"></g>
+                </g>
+                <g clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip)" class="c3-brush" style="pointer-events: all; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <rect class="background" x="0" width="819" style="visibility: hidden; cursor: crosshair;"></rect>
+                  <rect class="extent" x="0" width="0" style="cursor: move;"></rect>
+                  <g class="resize e" transform="translate(0,0)" style="cursor: ew-resize; display: none;">
+                    <rect x="-3" width="6" height="6" style="visibility: hidden;"></rect>
+                  </g>
+                  <g class="resize w" transform="translate(0,0)" style="cursor: ew-resize; display: none;">
+                    <rect x="-3" width="6" height="6" style="visibility: hidden;"></rect>
+                  </g>
+                </g>
+                <g class="c3-axis-x" transform="translate(0,0)" clip-path="url(http://qiita.com/marshmallow0319#c3-1483891397446-clip-xaxis)" style="visibility: hidden; opacity: 1;">
+                  <g class="tick" transform="translate(8, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/11</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(36, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/12</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(63, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/13</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(90, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/14</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(118, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/15</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(145, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/16</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(173, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/17</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(200, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/18</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(227, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/19</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(255, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/20</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(282, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/21</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(309, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/22</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(337, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/23</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(364, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/24</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(391, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/25</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(419, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/26</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(446, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/27</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(473, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/28</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(501, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/29</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(528, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">12/30</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(555, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">12/31</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(583, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">2017/1/1</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(610, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/2</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(637, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/3</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(665, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">1/4</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(692, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/5</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(720, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/6</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(747, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/7</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(774, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+                      <tspan x="0" dy=".71em" dx="0">1/8</tspan>
+                    </text>
+                  </g>
+                  <g class="tick" transform="translate(802, 0)" style="opacity: 1;">
+                    <line y2="6" x1="0" x2="0"></line>
+                    <text y="9" x="0" transform="" style="text-anchor: middle; display: none;">
+                      <tspan x="0" dy=".71em" dx="0">1/9</tspan>
+                    </text>
+                  </g>
+                  <path class="domain" d="M0,6V0H809V6"></path>
+                </g>
+              </g>
+              <g transform="translate(0,250)">
+                <g class=" c3-legend-item c3-legend-item-contribution" style="visibility: hidden; cursor: pointer;">
+                  <text x="14" y="9" style="pointer-events: none;">contribution</text>
+                  <rect class="c3-legend-item-event" x="0" y="-5" width="0" height="0" style="fill-opacity: 0;"></rect>
+                  <line class="c3-legend-item-tile" x1="-2" y1="4" x2="8" y2="4" stroke-width="10" style="pointer-events: none;"></line>
+                </g>
+              </g>
+              <text class="c3-title" x="425" y="0"></text>
+            </svg>
+            <div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none; top: 207.5px; left: 223.5px;">
+              <table class="c3-tooltip">
+                <tbody>
+                  <tr>
+                    <th colspan="2">12/17</th>
+                  </tr>
+                  <tr class="c3-tooltip-name--contribution">
+                    <td class="name">
+                      <span style="background-color:null"></span>
+                      contribution
+                    </td>
+                    <td class="value">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+          </div>
+          <div class="row user-activity-chart_stats">
+            <a class="col-xs-4 user-activity-chart_stat active" href="#">
+              <span class="user-activity-chart_stat-count">0</span>
+              <br>
+              <span class="user-activity-chart_stat-unit">Contribution</span>
+            </a>
+            <a class="col-xs-4 user-activity-chart_stat" href="#">
+              <span class="user-activity-chart_stat-count">0</span>
+              <br>
+              <span class="user-activity-chart_stat-unit">Followers</span>
+            </a>
+            <a class="col-xs-4 user-activity-chart_stat" href="#">
+              <span class="user-activity-chart_stat-count">0</span>
+              <br>
+              <span class="user-activity-chart_stat-unit">Items</span>
+            </a>
+          </div>
+        </div>
+        <hr>
+        <div class="new-user-page-panel" role="tabpanel">
+          <div class="row">
+            <div class="col-md-12 col-lg-5 col-lg-push-7"></div>
+            <div class="col-md-12 col-lg-5 col-lg-pull-5 new-user-page-_contriburions">
+              <h3 class="new-user-page_contributions_title">最近のコントリビュージョン</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer_inner clearfix">
+    <div class="footer_container clearfix">
+      <ul class="footer__links_left">
+        <li class="footer_link">
+          <a class="footer_copyright" href="#">© 2016 Increments Inc.</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">利用規約</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">プライバシー</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">ヘルプ</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">お問い合わせ</a>
+        </li>
+      </ul>
+      <ul class="footer__links_right">
+        <li class="footer_link">
+          <a href="#">Qiitaとは</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">ブログ</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">API</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Team</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Kobito</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Career</a>
+        </li>
+        <li class="footer_link">
+          <a class="js-public-form-feedback-link" data-target=".js-feedback-form" data-toggle="modal" href>
+            <i class="fa fa-heart"></i>ご意見<i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
