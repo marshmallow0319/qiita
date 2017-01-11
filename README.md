@@ -13,6 +13,7 @@
 
 - firstname :string
 - lastname :string
+- website :string
 - company :string
 - residence :string
 - profile :text
