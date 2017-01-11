@@ -1,0 +1,347 @@
+<div class="header-container header-container-public" role="navigation">
+  <div data-react-class="T.HeaderContainer" data-react-props="{"user":{"profile_image_url":"https://qiita-image-store.s3.amazonaws.com/0/136530/profile-images/1473719981","team_only":false,"teams":[],"url_name":"marshmallow0319"},"team":null,"news":{"type":"News","content":"ストックの他に「いいね」が追加されました","url":"http://blog.qiita.com/post/153200849029/qiita-like-button"},"initial_unread_count":0,"siteid_image":"http://cdn.qiita.com/siteid-reverse.png","is_team_page":false,"on_team_setting":false,"show_post_menu":true,"show_search_menu":true,"is_fluid":false,"locale":"ja"}">
+    <header data-reactroot class="shared-header shared-header-public">
+      <div class="shared-header_inner">
+        <div class="shared-header_left">
+          <span class="shared-header_logo open">
+            <%= link_to root_path, class: "shared-header_logo_main" do%>
+              <span class="shared-header_logo_figure">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 26">
+                  <title>Qiita</title>
+                  <path d="M24.6 12.2C24.6 6.2 20 0 12.2 0 6.2 0 0 4.6 0 12.4c0 6 4.6 12.2 12.4 12.2 2.5 0 5-.8 7.1-2.3l3.6 3.6 1.6-1.6-3.4-3.4c2.1-2.3 3.3-5.3 3.3-8.7zm-12.4-10c5.7 0 10.2 4.4 10.2 10.1 0 4.9-3.8 10.1-10.1 10.1s-10.1-5.1-10.1-10c0-6.4 5.1-10.2 10-10.2zM30.5 7.1h2.1v17h-2.1zM31.5 4.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM40 4.8c-1 0-1.8-.8-1.8-1.8S39 1.2 40 1.2s1.8.8 1.8 1.8S41 4.8 40 4.8zM39 7.1h2.1v17H39zM53.7 24.4c-3.9 0-6.2-3-6.2-6v-16h2.1v4.7H57v2.1h-7.4v9.3c0 1.9 1.5 3.9 4.1 3.9.7 0 1.4-.2 2-.6l.2-.1 1 1.8-.2.1c-.9.5-2 .8-3 .8zM67.6 24.5c-5.7 0-9.1-4.5-9.1-8.9 0-5.7 4.5-9.1 8.9-9.1 2.3 0 4.1.8 5.4 2.3V7.1h2.1v17h-2.1v-1.9c-1.2 1.5-3 2.3-5.2 2.3zm-.2-15.9c-3.4 0-6.8 2.6-6.8 7 0 3.4 2.6 6.8 7 6.8 2 0 4-.9 5.3-2.5v-8.8c-1.4-1.6-3.3-2.5-5.5-2.5z"></path>
+                </svg>
+              </span>
+            <% end %>
+          </span>
+          <form class="navbar-form navbar-left search-form" action-"/search" method="get">
+            <div class="search-form_query-wrapper">
+              <input class="form-control search-form_query" placeholder="キーワードを入力" autocomplete="off" name="q" value style="width: 220px;">
+              <div class="search-form_wise-search-button" style="visibility: visible;">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+          </form>
+          <div class="navbar-text header-news hidden-xs hidden-sm">
+            <div class="header-news_label label label-warning">News</div>
+            <a class="navbar-link" target="_blank" href="#">
+              ストックの他に「いいね」が追加されました
+            </a>
+          </div>
+        </div>
+        <div class="shared-header_right">
+          <div class="shared-header_search-icon">
+            <a data-tiggle="model" data-target="#js-search-model">
+              <i class="fa fa-search"></i>
+            </a>
+          </div>
+          <div class="shared-header_search-model in modal fade" aria-hidden="false" id="js-search-model">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form action="/search" method="get">
+                    <input type="hidden" name="sort" id="sort" value="rel">
+                    <div class="row">
+                      <div class="col-xs-9">
+                        <input type="text" name="q" id="q" class="form-control">
+                      </div>
+                      <div class="col-xs-3">
+                        <input type="submit" name="commit" value="Search" class="btn btn-default btn-sm">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shared-header_new-item btn-group">
+            <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
+              <i class="fa fa-lg fa-edit"></i>
+              <!-- react-text: 36 -->
+              投稿する
+              <!-- /react-text -->
+            </a>
+            <a class="shared-header_new-item_btn dropdown-toggle btn">
+              <i class="fa fa-caret-down"></i>
+              <span class="shared-header_new-item_xs-edit">
+                <i class="fa fa-edit"></i>
+              </span>
+            </a>
+          </div>
+          <div class="shared-header_stock-items">
+            <a href="#">ストック一覧</a>
+          </div>
+          <div class="shared-header_stock-items_xs-stock">
+            <a href="#" title="ストック一覧">
+              <i class="fa fa-folder"></i>
+            </a>
+          </div>
+          <div class="shared-header_notifications">
+            <div class="global-notifications open active">
+              <div class="global-notifications__surface">
+                <div class="global-notifications_count">
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shared-header_user open">
+            <a class="shared-header_user_clickable">
+              <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
+            </a>
+            <ul class="dropdown-menu shared-header_user_dropdown">
+              <li>
+                <a href="#">
+                  <i class="fa fa-fw fa-user"></i>
+                  <!-- react-text: 57 -->
+                  マイページ
+                  <!-- /react-text -->
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa fa-fw fa-cog"></i>
+                  <!-- react-text: 61 -->
+                  設定
+                  <!-- /react-text -->
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa fa-fw fa-question"></i>
+                  <!-- react-text: 65 -->
+                  ヘルプ
+                  <!-- /react-text -->
+                </a>
+                <!-- <a href="/users/sign_out" rel="nofollow" data-method="post"> -->
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-fw fa-sign-out"></i>
+                  ログアウト
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div class="settings">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 settings-navigation">
+        <div class="settings_menu">
+          <span class="settings_menu-heading">共通</span>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-user"></i>
+            アカウント
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-key"></i>
+            パスワード
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-laptop"></i>
+            セキュリティ
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-mobile"></i>
+            二段階認証
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-cubes"></i>
+            アプリケーション
+          </a>
+        </div>
+        <div class="settings_menu">
+          <span class="settings_menu-heading">Qiita</span>
+          <a class="settings_menu-item settings_menu-item-selected" href="#">
+            <i class="fa fa-fw fa-users"></i>
+            プロフィール
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-bell"></i>
+            メールアドレスと通知
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-bar-chart"></i>
+            Google Analytics
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="settings_panel">
+          <h1 class="settings_panel-heading">
+            <i class="fa fa-mobile"></i>
+            公開用プロフィール
+          </h1>
+          <div class="settings_panel-item">
+            <form class="user-form" id="edit_user_136530" action="#" accept-charset="UTF-8" method="post">
+              <input name="utf8" type="hidden" value="">
+              <input type="hidden" name="_method" value="put">
+              <input type="hidden" name="authenticity_token" value="#" >
+              <script data-url_name="#" id="js-user" type="application/json"></script>
+              <div class="form-group profile-settings_ignore-reils-error">
+                <label for="user_name">名前</label>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <input type="text" maximum="32" placeholder="名" class="form-control" value="ユーザの名" name="user[first_name]" id="user_first_name">
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="text" maximum="32" placeholder="姓" class="form-control" value="ユーザの姓" name="user[last_name]" id="user_last_name">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="user_public_email">公開メールアドレス</label>
+                <div class="checkbox">
+                  <label for="user_public_email">
+                    <input name="user[public_email]" type="hidden" value="0">
+                    <input type="checkbox" value="1" checked="checked" name="user[public_email]" id="user_public_email">
+                    メールアドレスを全体に公開する
+                  </label>
+                </div>
+                <div class="help-block">
+                  誰もがあなたのメールアドレス(
+                  <small>test@gmail.com</small>
+                  )を見れる状態になります。
+                  <a href="#">メールアドレスを変更</a>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="user_website_url">サイト/ブログ</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <input type="url" placeholder="URL" class="form-control" value="http://test" name="user[website_url]" id="user_website_url">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="user_organization">所属している組織・会社</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <input type="text" placeholder="Increments Inc." class="form-control" value="test" name="user[organization]" id="user_organization">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="user_location">居住地</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <input type="text" placeholder="Tokyo, Japan" class="form-control" value="test" name="user[location]" id="user_location">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="user_description">自己紹介</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <textarea rows="3" maxlength="200" class="form-control" name="user[description]" id="user_description">test</textarea>
+                  </div>
+                </div>
+                <div class="help-block">200文字以内</div>
+              </div>
+              <div class="form-group profile-settings_ignore-rails-error">
+                <label for="user_facebook_id">facebook ID</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">http://facebook.com/</span>
+                      <input class="form-control" type="text" value="test" name="user[facebook_id]" id="user_facebook_id">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group profile-settings_ignore-rails-error">
+                <label for="user_linkedin_id">LinkedIn ID</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">http://www.linkedin.com/in/</span>
+                      <input class="form-control" type="text" value="test" name="user[linkedin_id]" id="user_linkedin_id">
+                    </div>
+                  </div>
+                </div>
+                <div class="help-block">
+                  LinkedInの公開プロフィールURLは
+                  <a href="https://ja.help.linkedin.com/app/answers/detail/a_id/6472/ft/eng" target="_blank">こちらの方法</a>
+                  で設定できます。
+                </div>
+              </div>
+              <div class="form-group profile-settings_ignore-rails-error">
+                <label for="user_google_plus_id">Google+ ID</label>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">http://plus.google.com/</span>
+                      <input class="form-control" type="text" value="test" name="user[google_plus_id]" id="user_google_plus_id">
+                      <span class="input-group-addon">/post</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="help-block">
+                  紐付けを行うには
+                  <a href="https://plus.google.com/me/posts" target="_blank">Google+プロフィールページ</a>
+                  のURLに含まれるIDを入力し、
+                  <br>
+                  <a href="https://plus.google.com/me/about/edit/co" target="_blank">Google+の寄稿先欄に</a>
+                  "http://qiita.com/" を追加してください。
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="submit" name="commit" value="保存する" class="settings_button-primary" data-desable-with="保存する">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer_inner clearfix">
+    <div class="footer_container clearfix">
+      <ul class="footer__links_left">
+        <li class="footer_link">
+          <a class="footer_copyright" href="#">© 2016 Increments Inc.</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">利用規約</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">プライバシー</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">ヘルプ</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">お問い合わせ</a>
+        </li>
+      </ul>
+      <ul class="footer__links_right">
+        <li class="footer_link">
+          <a href="#">Qiitaとは</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">ブログ</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">API</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Team</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Kobito</a>
+        </li>
+        <li class="footer_link">
+          <a href="#">Career</a>
+        </li>
+        <li class="footer_link">
+          <a class="js-public-form-feedback-link" data-target=".js-feedback-form" data-toggle="modal" href>
+            <i class="fa fa-heart"></i>ご意見<i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
