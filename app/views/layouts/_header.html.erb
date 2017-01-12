@@ -29,105 +29,105 @@
           </div>
         </div>
         <div class="shared-header_right">
-        <% if user_signed_in? %>
-          <div class="shared-header_search-icon">
-            <a data-tiggle="model" data-target="#js-search-model">
-              <i class="fa fa-search"></i>
-            </a>
-          </div>
-          <div class="shared-header_search-model in modal fade" aria-hidden="false" id="js-search-model">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <form action="/search" method="get">
-                    <input type="hidden" name="sort" id="sort" value="rel">
-                    <div class="row">
-                      <div class="col-xs-9">
-                        <input type="text" name="q" id="q" class="form-control">
+          <% if user_signed_in? %>
+            <div class="shared-header_search-icon">
+              <a data-tiggle="model" data-target="#js-search-model">
+                <i class="fa fa-search"></i>
+              </a>
+            </div>
+            <div class="shared-header_search-model in modal fade" aria-hidden="false" id="js-search-model">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <form action="/search" method="get">
+                      <input type="hidden" name="sort" id="sort" value="rel">
+                      <div class="row">
+                        <div class="col-xs-9">
+                          <input type="text" name="q" id="q" class="form-control">
+                        </div>
+                        <div class="col-xs-3">
+                          <input type="submit" name="commit" value="Search" class="btn btn-default btn-sm">
+                        </div>
                       </div>
-                      <div class="col-xs-3">
-                        <input type="submit" name="commit" value="Search" class="btn btn-default btn-sm">
-                      </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="shared-header_new-item btn-group">
-            <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
-              <i class="fa fa-lg fa-edit"></i>
-              <!-- react-text: 36 -->
-              投稿する
-              <!-- /react-text -->
-            </a>
-            <a class="shared-header_new-item_btn dropdown-toggle btn">
-              <i class="fa fa-caret-down"></i>
-              <span class="shared-header_new-item_xs-edit">
-                <i class="fa fa-edit"></i>
-              </span>
-            </a>
-          </div>
-          <div class="shared-header_stock-items">
-            <a href="#">ストック一覧</a>
-          </div>
-          <div class="shared-header_stock-items_xs-stock">
-            <a href="#" title="ストック一覧">
-              <i class="fa fa-folder"></i>
-            </a>
-          </div>
-          <div class="shared-header_notifications">
-            <div class="global-notifications open active">
-              <div class="global-notifications__surface">
-                <div class="global-notifications_count">
-                  0
+            <div class="shared-header_new-item btn-group">
+              <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
+                <i class="fa fa-lg fa-edit"></i>
+                <!-- react-text: 36 -->
+                投稿する
+                <!-- /react-text -->
+              </a>
+              <a class="shared-header_new-item_btn dropdown-toggle btn">
+                <i class="fa fa-caret-down"></i>
+                <span class="shared-header_new-item_xs-edit">
+                  <i class="fa fa-edit"></i>
+                </span>
+              </a>
+            </div>
+            <div class="shared-header_stock-items">
+              <a href="#">ストック一覧</a>
+            </div>
+            <div class="shared-header_stock-items_xs-stock">
+              <a href="#" title="ストック一覧">
+                <i class="fa fa-folder"></i>
+              </a>
+            </div>
+            <div class="shared-header_notifications">
+              <div class="global-notifications open active">
+                <div class="global-notifications__surface">
+                  <div class="global-notifications_count">
+                    0
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="shared-header_user open">
+              <a class="shared-header_user_clickable">
+                <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
+              </a>
+              <ul class="dropdown-menu shared-header_user_dropdown">
+                <li>
+                  <%= link_to user_path(current_user) do%>
+                    <i class="fa fa-fw fa-user"></i>
+                    <!-- react-text: 57 -->
+                    マイページ
+                    <!-- /react-text -->
+                  <% end %>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa fa-fw fa-cog"></i>
+                    <!-- react-text: 61 -->
+                    設定
+                    <!-- /react-text -->
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa fa-fw fa-question"></i>
+                    <!-- react-text: 65 -->
+                    ヘルプ
+                    <!-- /react-text -->
+                  </a>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-fw fa-sign-out"></i>
+                    ログアウト
+                  <% end %>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="shared-header_user open">
-            <a class="shared-header_user_clickable">
-              <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
-            </a>
-            <ul class="dropdown-menu shared-header_user_dropdown">
-              <li>
-                <%= link_to user_path(current_user) do%>
-                  <i class="fa fa-fw fa-user"></i>
-                  <!-- react-text: 57 -->
-                  マイページ
-                  <!-- /react-text -->
-                <% end %>
-              </li>
-              <li>
-                <a href="#" target="_blank">
-                  <i class="fa fa-fw fa-cog"></i>
-                  <!-- react-text: 61 -->
-                  設定
-                  <!-- /react-text -->
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank">
-                  <i class="fa fa-fw fa-question"></i>
-                  <!-- react-text: 65 -->
-                  ヘルプ
-                  <!-- /react-text -->
-                </a>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-fw fa-sign-out"></i>
-                  ログアウト
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
         <% else %>
-        <div class="shared-header_register-user">
-          <%= link_to "ユーザ登録", new_user_registration_path, class: "btn btn-warning navbar-btn navbar-right" %>
-        </div>
-        <div class="shared-header_login-user">
-          <%= link_to "ログイン", new_user_session_path %>
-        </div>
+          <div class="shared-header_register-user">
+            <%= link_to "ユーザ登録", new_user_registration_path, class: "btn btn-warning navbar-btn navbar-right" %>
+          </div>
+          <div class="shared-header_login-user">
+            <%= link_to "ログイン", new_user_session_path %>
+          </div>
         <% end %>
       </div>
     </header>
