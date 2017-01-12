@@ -13,9 +13,13 @@
 
 - firstname :string
 - lastname :string
+- website :string
 - company :string
 - residence :string
 - profile :text
+- facebook_id :string
+- linkedin_id :string
+- google_plus_id :string
 - avatar :string
 
 # Article

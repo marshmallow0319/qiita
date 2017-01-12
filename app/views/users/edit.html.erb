@@ -1,0 +1,180 @@
+<%= render "layouts/header" %>
+<div class="settings">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 settings-navigation">
+        <div class="settings_menu">
+          <span class="settings_menu-heading">共通</span>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-user"></i>
+            アカウント
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-key"></i>
+            パスワード
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-laptop"></i>
+            セキュリティ
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-mobile"></i>
+            二段階認証
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-cubes"></i>
+            アプリケーション
+          </a>
+        </div>
+        <div class="settings_menu">
+          <span class="settings_menu-heading">Qiita</span>
+          <a class="settings_menu-item settings_menu-item-selected" href="#">
+            <i class="fa fa-fw fa-users"></i>
+            プロフィール
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-bell"></i>
+            メールアドレスと通知
+          </a>
+          <a class="settings_menu-item" href="#">
+            <i class="fa fa-fw fa-bar-chart"></i>
+            Google Analytics
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="settings_panel">
+          <h1 class="settings_panel-heading">
+            <i class="fa fa-mobile"></i>
+            公開用プロフィール
+          </h1>
+          <div class="settings_panel-item">
+            <%= form_for(current_user, html: {class: "user-form", id: "edit_user_#{current_user.id}"} ) do |f| %>
+              <script data-url_name="#" id="js-user" type="application/json"></script>
+              <div class="form-group profile-settings_ignore-reils-error">
+                <%= f.label :firstname, "名前" %>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <%= f.text_field :firstname, value: "#{current_user.firstname}", class: "form-control", placeholder: "名", maximum: "32", id: "user_first_name" %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.text_field :lastname, value: "#{current_user.lastname}", class: "form-control", placeholder: "姓", maximum: "32", id: "user_last_name" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :email_checked, "公開メールアドレス"%>
+                <div class="checkbox">
+                  <%= f.label :email_checked do %>
+<!--                     <input name="user[public_email]" type="hidden" value="0">
+                    <input type="checkbox" value="1" checked="checked" name="user[public_email]" id="user_public_email"> -->
+                    <%= f.check_box :email_checked %>
+                    メールアドレスを全体に公開する
+                  <% end %>
+                </div>
+                <div class="help-block">
+                  誰もがあなたのメールアドレス(
+                  <small><%= current_user.email %></small>
+                  )を見れる状態になります。
+                  <a href="#">メールアドレスを変更</a>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :website, "サイト/ブログ"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <%= f.text_field :website, value: "#{current_user.website}", class: "form-control", placeholder: "URL", id: "user_website_url" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :company, "所属している組織・会社"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <%= f.text_field :company, value: "#{current_user.company}", class: "form-control", placeholder: "Increments Inc.", id: "user_organization" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :residence, "居住地"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <%= f.text_field :residence, value: "#{current_user.residence}", class: "form-control", placeholder: "Tokyo, Japan", id: "user_location" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :profile, "自己紹介" %>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <%= f.text_area :profile, value: "#{current_user.profile}", maxlength: "200", rows: "3", class: "form-control", id: "user_description" %>
+                  </div>
+                </div>
+                <div class="help-block">200文字以内</div>
+              </div>
+              <div class="form-group profile-settings_ignore-rails-error">
+                <%= f.label :facebook_id, "facebook ID"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">http://facebook.com/</span>
+                      <%= f.text_field :facebook_id, value: "#{current_user.facebook_id}", class: "form-control", id: "user_facebook_id" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group profile-settings_ignore-rails-error">
+                <%= f.label :linkedin_id, "LinkedIn ID"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">http://www.linkedin.com/in/</span>
+                      <%= f.text_field :linkedin_id, value: "#{current_user.linkedin_id}", class: "form-control", id: "user_linkedin_id" %>
+                    </div>
+                  </div>
+                </div>
+                <div class="help-block">
+                  LinkedInの公開プロフィールURLは
+                  <%= link_to 'こちらの方法', "https://ja.help.linkedin.com/app/answers/detail/a_id/6472/ft/eng", class: 'btn btn-link js-cancel-link', target: "_blank" %>
+                  で設定できます。
+                </div>
+              </div>
+              <div class="form-group profile-settings_ignore-rails-error">
+                <%= f.label :google_plus_id, "Google+ ID"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <span class="input-group-addon">http://plus.google.com/</span>
+                      <%= f.text_field :google_plus_id, value: "#{current_user.google_plus_id}", class: "form-control", id: "user_google_plus_id" %>
+                      <span class="input-group-addon">/post</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="help-block">
+                  紐付けを行うには
+                  <%= link_to 'Google+プロフィールページ', "https://plus.google.com/me/posts", target: "_blank" %>
+                  のURLに含まれるIDを入力し、
+                  <br>
+                  <%= link_to 'Google+の寄稿先欄に', "https://plus.google.com/me/about/edit/co", target: "_blank" %>
+                  "http://qiita.com/" を追加してください。
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :password, "パスワード"%>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <%= f.text_field :password, class: "form-control", placeholder: "password", id: "user_password", autocomplete: "off" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.submit "保存する", class: "settings_button-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>
