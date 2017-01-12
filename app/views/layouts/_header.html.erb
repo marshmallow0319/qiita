@@ -29,6 +29,7 @@
           </div>
         </div>
         <div class="shared-header_right">
+        <% if user_signed_in? %>
           <div class="shared-header_search-icon">
             <a data-tiggle="model" data-target="#js-search-model">
               <i class="fa fa-search"></i>
@@ -120,6 +121,14 @@
             </ul>
           </div>
         </div>
+        <% else %>
+        <div class="shared-header_register-user">
+          <%= link_to "ユーザ登録", new_user_registration_path, class: "btn btn-warning navbar-btn navbar-right" %>
+        </div>
+        <div class="shared-header_login-user">
+          <%= link_to "ログイン", new_user_session_path %>
+        </div>
+        <% end %>
       </div>
     </header>
   </div>
