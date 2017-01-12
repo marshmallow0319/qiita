@@ -20,21 +20,27 @@
             <%= @user.username %>
           </h4>
           <ul class="list-inline new-user-page-profile_social-links">
-            <li class="new-user-page-profile_social-link-facebook">
-              <%= link_to "http://facebook.com/#{@user.facebook_id}", target: "_blank" do %>
-                <i class="fa fa-facebook-square"></i>
-              <% end %>
-            </li>
-            <li class="new-user-page-profile_social-link-google-plus">
-              <%= link_to "http://plus.google.com/#{@user.google_plus_id}", target: "_blank" do %>
-                <i class="fa fa-google-plus-square"></i>
-              <% end %>
-            </li>
-            <li class="new-user-page-profile_social-link-linkedin">
-              <%= link_to "http://www.linkedin.com/in/#{@user.linkedin_id}", target: "_blank" do %>
-                <i class="fa fa-linkedin-square"></i>
-              <% end %>
-            </li>
+            <% if @user.facebook_id.present? %>
+              <li class="new-user-page-profile_social-link-facebook">
+                <%= link_to "http://facebook.com/#{@user.facebook_id}", target: "_blank" do %>
+                  <i class="fa fa-facebook-square"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @user.google_plus_id.present? %>
+              <li class="new-user-page-profile_social-link-google-plus">
+                <%= link_to "http://plus.google.com/#{@user.google_plus_id}", target: "_blank" do %>
+                  <i class="fa fa-google-plus-square"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @user.linkedin_id.present? %>
+              <li class="new-user-page-profile_social-link-linkedin">
+                <%= link_to "http://www.linkedin.com/in/#{@user.linkedin_id}", target: "_blank" do %>
+                  <i class="fa fa-linkedin-square"></i>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
         <div class="new-user-page-profile_info">
