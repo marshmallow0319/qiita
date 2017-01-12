@@ -55,12 +55,12 @@
               </div>
             </div>
             <div class="shared-header_new-item btn-group">
-              <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
+              <%= link_to new_article_path, class: "shared-header_new-item_btn shared-header_new-item_post btn" do %>
                 <i class="fa fa-lg fa-edit"></i>
                 <!-- react-text: 36 -->
                 投稿する
                 <!-- /react-text -->
-              </a>
+              <% end %>
               <a class="shared-header_new-item_btn dropdown-toggle btn">
                 <i class="fa fa-caret-down"></i>
                 <span class="shared-header_new-item_xs-edit">
