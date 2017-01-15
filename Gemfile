@@ -41,6 +41,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-github'
 gem 'dotenv-rails'
 
 group :development, :test do
