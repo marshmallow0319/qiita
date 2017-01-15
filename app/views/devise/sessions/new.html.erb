@@ -35,10 +35,10 @@
             <div class="help-block js-email-invalid-message" style="display: none"></div>
           <% end %>
           <div class="landing-oauth-signup">
-            <a class="btn btn-github-inverse btn-block landing-oauth-signup_button" track="click" data-event_name="Login" data-login__type="GitHub" data-place="londing page" href="#">
+            <%= link_to user_github_omniauth_authorize_path, class: "btn btn-github-inverse btn-block landing-oauth-signup_button" do %>
               <i class="fa fa-github"></i>
               Githubで新規登録/ログイン
-            </a>
+            <% end %>
             <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-twitter-inverse btn-block landing-oauth-signup_button" do %>
               <i class="fa fa-twitter"></i>
               Twitterで新規登録/ログイン
