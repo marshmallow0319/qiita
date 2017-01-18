@@ -58,7 +58,7 @@
                   <div class="emoji-picker_container"></div>
                 </div>
               </div>
-              <div class="editor-marksown_help js-markdown-help">
+              <div class="editor-markdown_help js-markdown-help">
                 <div data-reactroot data-toggle="modal" data-target="#help">
                   <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" data-container=".js-body-form-view" data-viewport=".js-body-form-view" data-tip="Markdown の書き方" currentitem="false"></i>
                   <div class="__react_component_tooltip type-dark custom-tooltip" data-id="tooltip" style="left: 460px; top: 112px;">
@@ -66,15 +66,15 @@
                   </div>
                 </div>
               </div>
-              <div class="editor-morkdown_toggle-buttons">
-                <i class="fa editor-mark-down_toggle-icon-full-preview js-full-preview"></i>
-                <i class="fa editor-mark-down_toggle-icon-half-preview js-half-preview"></i>
-                <i class="fa editot-mark-down_toggle-icon-no-preview js-no-preview"></i>
+              <div class="editor-markdown_toggle-buttons">
+                <i class="fa editor-markdown_toggle-icon-full-preview js-full-preview"></i>
+                <i class="fa editor-markdown_toggle-icon-half-preview js-half-preview"></i>
+                <i class="fa editor-markdown_toggle-icon-no-preview js-no-preview"></i>
               </div>
             </div>
           </div>
-          <div class="editor-mark-down_panel active" id="mark-down">
-            <div class="editor-mark-down_text-area-wrapper">
+          <div class="editor-markdown_panel active" id="mark-down">
+            <div class="editor-markdown_textarea-wrapper">
               <textarea class="editor-markdown_textarea js-validation-error js-raw_body-validation-error js-expanded_link_urls-validation-error" data-placement="top" id="editor_raw_body" name="draft_item[raw_body]" placeholder="Markdownで入力" tabindex="3" data-original-titletitle></textarea>
             </div>
           </div>
@@ -86,7 +86,7 @@
               <i class="fa editor-preview_toggle-icon-full-preview js-full-preview"></i>
               <i class="fa editor-preview_toggle-icon-half-preview js-half-preview"></i>
               <i class="fa editor-preview_toggle-icon-no-preview js-no-preview">
-                <div class="editor-preview_toggle-icon-text"></div>
+                <div class="editor-preview_toggle-icon-text">編集に戻る</div>
               </i>
             </div>
             <div class="editor-preview_title">プレビュー</div>
@@ -102,16 +102,17 @@
           <div class="editor-preview_cheatsheet hidden-js js-editor-preview_cheatsheet">
             <h4 class="markdown-cheatsheet_title">
               <i class="fa fa-question-circle"></i>
+              Markdown記法のヒント
             </h4>
-            <div class="markdown-cheatsheet_blook">
+            <div class="markdown-cheatsheet_block">
               <div class="markdown-cheatsheet_item">
                 <div class="markdown-cheatsheet_header">見出し</div>
                 <div class="markdown-cheatsheet_content">
-                  "# 見出し1"
+                  # 見出し1
                   <br>
-                  "## 見出し2"
+                  ## 見出し2
                   <br>
-                  "### 見出し3"
+                  ### 見出し3
                 </div>
               </div>
               <div class="markdown-cheatsheet_item">
@@ -123,7 +124,7 @@
                 <div class="markdown-cheatsheet_content">[リンク](http://...)</div>
               </div>
               <div class="markdown-cheatsheet_item">
-                <div class="markdown-cheat-sheet_header">コード</div>
+                <div class="markdown-cheatsheet_header">コード</div>
                 <div class="markdown-cheatsheet_content">
                   ```ruby:filename.rb
                   <br>
@@ -150,7 +151,7 @@
                   <br>
                   3. 番号付きリスト3
                 </div>
-                <div class="markdonw-cheatsheet_content">
+                <div class="markdown-cheatsheet_content">
                   - [ ] チェックボックス1
                   <br>
                   - [ ] チェックボックス2
@@ -458,7 +459,7 @@
       <div class="editor-footer_save editor-save">
         <div class="editor-save_submit">
           <div class="editor-submit">
-            <div class="btn-group editor-submit_submit-button-wrapper">
+            <div class="btn-group editor-submit_submit-btn-group js-submit-button-wrapper">
               <button class="btn btn-primary js-submit-button editor-submit_submit-btn" tabindex="12">
                 <span class="editor-submit_submit-btn-label active" id="save">
                   <i class="fa fa-save"></i>
