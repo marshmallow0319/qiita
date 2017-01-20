@@ -19,7 +19,7 @@
                   <span class="user">
                   <%= link_to "#{article.user.username}", user_path(article.user_id) %>
                   </span>
-                  が<%= "#{article.created_at}" %>に
+                  が<%= article.created_at.strftime('%Y/%m/%d') %>に
                   <!-- 本当は何分前に投稿したかを表示 -->
                   <span>投稿</span>
                   しました
