@@ -87,7 +87,7 @@
             </div>
             <div class="shared-header_user">
               <a class="shared-header_user_clickable" data-toggle="dropdown" href="#" aria-expanded="false">
-                <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
+                <%= image_tag current_user.avatar, class: "shared-header_user_image", size: "32x32" %>
               </a>
               <ul class="dropdown-menu shared-header_user_dropdown">
                 <li>

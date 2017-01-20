@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-3 col-xs-12 new-user-page-profile">
         <div class="new-user-page-profile_avatar">
-          <%= image_tag("user-avatar.png", size: "270x270")%>
+          <%= image_tag @user.avatar, size: "270x270" %>
         </div>
         <div class="new-user-page-profile_header">
           <h3 class="new-user-page-profile_full-name">
@@ -53,7 +53,9 @@
           </div>
           <div class="new-user-page-profile_info_body">
             <i class="fa fa-fw fa-link"></i>
-            <%= link_to @user.website, target: "_blank", rel:"me nofollow", itemprop: "url" %>
+            <%= link_to @user.website, target: "_blank", rel:"me nofollow", itemprop: "url" do %>
+              <%= @user.website %>
+            <% end %>
           </div>
           <div class="new-user-page-profile_info_body">
             <i class="fa fa-fw fa-building-o"></i>

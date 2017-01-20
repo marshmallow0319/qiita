@@ -10,7 +10,7 @@
           <div class="item-box-container-inner">
             <div class="action-user-icon action">
               <%= link_to user_path(article.user_id) do %>
-                <%= image_tag("user-avatar.png", class: "user-icon", title: "#{article.user.username}") %>
+                <%= image_tag article.user.avatar, class: "user-icon", title: "#{article.user.username}" %>
               <% end %>
             </div>
             <div class="item-box-area">
