@@ -1,15 +1,11 @@
 <%= render "layouts/header" %>
 <div class="public-editor">
-  <form class="editor form js-editor" data-type-int="1" data-belong-to-team="false" data-tutorial="true" id="new_draft_item" action="/drafts" accept-charset="utf-8" method="post">
-    <input name="utf8" type="hidden" value="✓">
-    <input type="hidden" name="authenticity_token" value="#">
+  <%= form_for @article, html: { class: "editor form js-editor", id: "new_draft_item" } do |f| %>
     <div class="hidden">
-      <input type="hidden" name="draft_item[secret]" id="draft_item_secret" value="0">
-      <input type="hidden" name="publish" id="draft_item_publish" value>
     </div>
     <div class="editor_content">
       <div class="editor-title js-title-form js-validation-error js-tag_data-validation-error" data-placement="bottom" data-original-title title>
-        <input autofocus class="form-control" name="draft_item[title]" placeholder="タイトル" tabindex="1">
+        <%= f.text_field :title, id: "js-title", class: "form-control", autofocus: true, placeholder: "タイトル", tabindex: "1" %>
         <div class="editor-label">
           <div class="editor-label_status-unposted">未投稿</div>
         </div>
@@ -75,7 +71,7 @@
           </div>
           <div class="editor-markdown_panel active" id="mark-down">
             <div class="editor-markdown_textarea-wrapper">
-              <textarea class="editor-markdown_textarea js-validation-error js-raw_body-validation-error js-expanded_link_urls-validation-error" data-placement="top" id="editor_raw_body" name="draft_item[raw_body]" placeholder="Markdownで入力" tabindex="3" data-original-titletitle></textarea>
+              <%= f.text_area :text, id: "editor-markdown", class: "editor-markdown_textarea js-validation-error js-raw_body-validation-error js-expanded_link_urls-validation-error", placeholder: "Markdownで入力", tabindex: "3" %>
             </div>
           </div>
           <div class="editor-markdown_panel" id="diff"></div>
@@ -99,7 +95,7 @@
           <div class="editor-preview_article js-preview">
             <div data-reactroot class="mark-down-content"></div>
           </div>
-          <div class="editor-preview_cheatsheet hidden-js js-editor-preview_cheatsheet">
+          <div class="editor-preview_cheatsheet hidden-js js-editor-preview_cheatsheet" id="result" style="background-image: none;">
             <h4 class="markdown-cheatsheet_title">
               <i class="fa fa-question-circle"></i>
               Markdown記法のヒント
@@ -460,24 +456,25 @@
         <div class="editor-save_submit">
           <div class="editor-submit">
             <div class="btn-group editor-submit_submit-btn-group js-submit-button-wrapper">
-              <button class="btn btn-primary js-submit-button editor-submit_submit-btn" tabindex="12">
-                <span class="editor-submit_submit-btn-label active" id="save">
+              <%= button_tag type: "submit", class: "btn btn-primary js-submit-button editor-submit_submit-btn", tabindex: "12" do %>
+<!--                 <span class="editor-submit_submit-btn-label" id="save">
                   <i class="fa fa-save"></i>
                   下書き保存
                 </span>
                 <span class="editor-submit_submit-btn-label" id="secret-post">
                   <i class="fa fa-lock"></i>
                   限定共有投稿
-                </span>
-                <span class="editor-submit_submit-btn-label" id="post">
+                </span> -->
+                <span class="editor-submit_submit-btn-label active" id="post">
                   <i class="fa fa-upload"></i>
                   Qiita に投稿
+                  <!-- 選んだタブにactiveクラスを付ける -->
                 </span>
-                <span class="editor-submit_submit-btn-label" id="coediting-post">
+<!--                 <span class="editor-submit_submit-btn-label" id="coediting-post">
                   <i class="fa fa-users"></i>
                   共同編集モードで投稿
-                </span>
-              </button>
+                </span>-->
+              <% end %>
               <a class="btn btn-primary dropdown-toggle js-dropdown-button visible-js editor-submit_dropdown-toggle">
                 <i class="fa fa-caret-up"></i>
               </a>
@@ -552,5 +549,5 @@
         </div>
       </div>
     </div>
-  </form>
+  <% end %>
 </div>
