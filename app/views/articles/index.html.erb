@@ -59,7 +59,7 @@
           <div class="user-info_right">
             <div class="user-info_names">
               <div class="user-info_url-name">
-                <a href="#">テスト</a>
+                <%= link_to "#{current_user.username}", user_path(current_user)%>
               </div>
             </div>
             <div class="user-info_stats">
