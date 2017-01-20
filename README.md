@@ -51,7 +51,7 @@
 # Stock
 
 ## association
-`belongs_to :users, :articles`
+`belongs_to :user, :article`
 
 ## table
 - id :integer
@@ -63,7 +63,7 @@
 # Comment
 
 ## association
-`belongs_to :user, :articles`
+`belongs_to :user, :article`
 
 ## table
 - id :integer
