@@ -1,0 +1,22 @@
+<div class="stock-stream">
+  <form action="/search" class="stream_search-form" method="GET">
+    <div>
+      <input placeholder="ストック検索" class="stream_search-form_text-field js-stream_search-form_text-field">
+      <button type="submit" class="btn stream_search-form_search-button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <input type="hidden" name="q" class="js-stream_search-form_search-query" value>
+    <input type="hidden" name="stocked" value="1">
+  </form>
+  <div>
+    <div class="circle-loading">
+      <p>読み込み中</p>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
