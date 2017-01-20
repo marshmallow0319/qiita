@@ -26,6 +26,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    @html = markdown.render(@article.text)
   end
 
   private

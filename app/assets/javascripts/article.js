@@ -7,5 +7,8 @@ $(function(){
     editor = $(this).val();
     editor = marked(editor);
     $('#result').html(editor);
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
   });
 });
