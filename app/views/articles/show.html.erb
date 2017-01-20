@@ -1,0 +1,343 @@
+<%= render "layouts/header" %>
+<div id="main">
+  <ol class="item-breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="item-list-element" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Qiita</span>
+      </a>
+      <meta content="1" itemprop="position">
+    </li>
+    <li itemprop="item-list-element" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="#">
+        <span itemprop="name">投稿</span>
+      </a>
+      <meta content="2" itemprop="position">
+    </li>
+    <li itemprop="item-list-element" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="#">
+        <span itemprop="name">Android</span>
+      </a>
+      <meta content="3" itemprop="position">
+    </li>
+  </ol>
+  <article itemscope itemtype="http://schema.org/Article">
+    <div class="article-main-header">
+      <div class="container">
+      </div>
+      <div class="container">
+        <div class="row s-flex-align-center">
+          <div class="col-sm-9">
+            <h1 class="article-main-header__title">
+              <%= @article.title %>
+            </h1>
+            <ul class="Tag-list">
+              <li class="Tag-list__item" data-count="登録タグ数">
+                <a class="u-link-unstyled Tag-list__label" href="#">
+                  <img alt="タグ名1" class="Tag-list__icon" src="#">
+                  <span>タグ名1</span>
+                </a>
+              </li>
+              <li class="Tag-list__item" data-count="登録タグ数">
+                <a class="u-link-unstyled Tag-list__label" href="#">
+                  <img alt="タグ名2" class="Tag-list__icon" src="#">
+                  <span>タグ名2</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <div class="items-show-header-stock">
+              <ul class="list-unstyled items-show-header-stock_status-list">
+                <li>
+                  <div class="items-show-header-stock_count stock">
+                    <span class="fa fa-thumbs-up"></span>
+                    <span class="js-likecount">0</span>
+                  </div>
+                  <div class="items-show-header-stock_count-text">いいね</div>
+                </li>
+                <li>
+                  <div class="items-show-header-stock_count" content="0 UserComments" itemprop="interactionCount">
+                    <span class="fa fa-comment"></span>
+                    0
+                  </div>
+                  <div class="items-show-header-stock_count-text">コメント</div>
+                </li>
+              </ul>
+            </div>
+            <div class="js-like-button" data-props="{"like_status":false,"like_count":0,"uuid":"b04ec9a7721553537b77","likable_type":"Article","position":"article-header"}">
+              <div data-reactroot class="like-button">
+                <button class="p-button">
+                  <span class="fa fa-fw fa-thumbs-up"></span>
+                  <span>いいね</span>
+                </button>
+              </div>
+            </div>
+            <ul class="list-inline article-main-header__users">
+              <li class="js-hovercard" data-hovercard-target-name="ここはarticle.like.user_id">
+                <a itemprop="url" href="ここはarticle.like.user_id">
+                  <img alt="ここはarticle.like.user_id" class="thumb thumb--xs" src="ここはarticle.like.user.avatar">
+                </a>
+              </li>
+<!--               リストを10個まで表示する。それ以上ある場合は下のリストからいいねした一覧ページへ飛ばす
+              <li>
+                <a href="ここはuser.username/articles/article.id/likers">
+                  <span class="fa fa-ellipsis-h"></span>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="article-aside-header">
+      <div class="container">
+        <div class="u-flex u-space-between">
+          <div class="u-flex u-flex-wrap">
+            <div class="u-flex u-align-center s-pdv-5 u-flex-wrap">
+              <div class="article-aside-header__author">
+                <%= link_to user_path(@article.user_id) do %>
+                  <%= image_tag @article.user.avatar, class: "thumb thumb--xs"%>
+                <% end %>
+                <%= link_to "#{@article.user.username}", user_path(@article.user_id), class: "u-link-unstylee" %>
+              </div>
+              <div class="article-aside-header__date">
+                <span>
+                  <%= @article.created_at.strftime('%Y/%m/%d') %>
+                  に投稿
+                </span>
+              </div>
+            </div>
+<!--             <div class="u-flex u-align-center s-pdv-5 mobile-hidden"></div>
+            <div class="u-flex u-align-center s-pdv-5 mobilehidden"></div>
+            コメント、更新などがあった場合ここに表示する機能を付ける -->
+          </div>
+          <div class="u-flex u-align-center s-flex-justiry-between s-pdv-5 u-shrink-0">
+            <div class="article-aside-header__stock">
+              <div class="js-stockbutton" data-position="top" data-props={"stock_status":false}>
+                <div data-reactroot="" class="stock-button">
+                  <button currentitem="false">
+                    <div class="stock-button__stock">
+                      <div class="fa-stack">
+                        <span class="fa fa-folder-open fa-stack-1x unstock"></span>
+                      </div>
+                      <!-- react-text: 6 -->
+                      &nbsp;
+                      <!-- /react-text -->
+                      <span class="stock-button__label">ストック</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="fa fa-ellipsis-h fa-lg"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown__item--mobile">
+                  <a href="/username/articles/article.id.md">
+                    <span class="fa fa-fw fa-history"></span>
+                    編集履歴
+                    <span>0</span>
+                    <!-- 編集した回数を表示 -->
+                  </a>
+                </li>
+                <li>
+                  <a href="ここはuser.username/articles/ariticle.id.md">
+                    <span class="fa fa-fw fa-file-text-o"></span>
+                    Markdownで本文を見る
+                  </a>
+                </li>
+                <li>
+                  <a data-target=".js-report-form" data-toggle="modal" href="#">
+                    <span class="fa fa-fw fa-flag"></span>
+                    問題がある投稿を報告する
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" id="article-body-wrapper" style="position: relative;">
+        <div class="col-sm-9">
+          <section class="markdown-content markdown-content-heading-enabled js-task-list-container clearfix position-relative" id="item-#{article.id}" itemprop="article-body">
+            <%= @html.html_safe %>
+          </section>
+        </div>
+        <div class="col-sm-3">
+          <div class="social-buttons">
+            <div class="social-buttons-twitter"></div>
+            <div class="social-buttons_hatebu"></div>
+            <div class="social-buttons_google-plus"></div>
+            <div class="social-button_facebook"></div>
+            <div class="social-buttons_pocket"></div>
+          </div>
+          <section class="items-show-author-info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <%= link_to user_path(@article.user_id) do %>
+              <%= image_tag @article.user.avatar, class: "items-show-author-info_user-icon", itemprop: "image" %>
+            <% end %>
+            <div class="items-show-author-info_profile-stats">
+              <strong class="items-show-author-info_user-name" itemprop="name">
+                <%= link_to "#{@article.user.username}", user_path(@article.user_id), itemprop: "url" %>
+              </strong>
+              <div class="items-show-author-info_contribution">
+                <span class="items-show-author-info_count">0</span>
+                <span class="items-show-author-info_unit">Contribution</span>
+              </div>
+              <div data-react-class="T.user-follow-button" data-react-props="#">
+                <span data-reactroot class="user-follow-button">
+                  <button class="btn btn-default btn-block user-follow-button_inner btn-xs">
+                    <i class="i fa fa-user-plus"></i>
+                    <!-- react-text: 4 -->
+                    フォロー
+                    <!-- /react-text -->
+                  </button>
+                </span>
+              </div>
+            </div>
+<!--             <section class="items-show-author-popular-items">
+              <h5 class="items-show-author-popular-items_section-title">人気の投稿</h5>
+              <ul class="items-show-author-popular-items_posts list-unstyled">
+                <li itemscope itemtype="http://schema.org/Article">
+                  <a itemprop="url" track="click" data-label="author-popular-items-at-sidebar" href="/user.username/arricles/article.id">ここは記事のタイトル</a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Article">
+                  <a itemprop="url" track="click" data-label="author-popular-items-at-sidebar" href="/user.username/arricles/article.id">ここは記事のタイトル</a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Article">
+                  <a itemprop="url" track="click" data-label="author-popular-items-at-sidebar" href="/user.username/arricles/article.id">ここは記事のタイトル</a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Article">
+                  <a itemprop="url" track="click" data-label="author-popular-items-at-sidebar" href="/user.username/arricles/article.id">ここは記事のタイトル</a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Article">
+                  <a itemprop="url" track="click" data-label="author-popular-items-at-sidebar" href="/user.username/arricles/article.id">ここは記事のタイトル</a>
+                </li>
+              </ul>
+            </section>
+            人気の定義(アルゴリズム)をどうしてるかは不明だけど、投稿者が投稿した全記事の中で、ストック数やいいね数に応じて上から順に5件記事を表示している -->
+          </section>
+          <div class="scroll-chaser"></div>
+          <!-- <div data-react-class="T.Toc">
+            <div data-reactroot class="tac-tree" style="width: 270px; position: relative; top: 0px;">
+              <div class="toc-tree_contents nav" style="max-height: 429px">
+                <ul>
+                  <li class="">
+                  現在スクロールしてる場所にactiveクラスが付くようにする
+                    <a href="#">
+                    記事中の見出しの場所へジャンプできるようにする
+                  </li>
+                  ここにリストを見出し数分作る
+                </ul>
+              </div>
+            </div>
+          </div>
+          おそらく"#"によって見出し化された部分を、reactでscroll-chaserとして実装している -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="article-footer__menu">
+            <div class="s-flex-align-center">
+              <div class="js-likebutton" data-props="#">
+                <div data-reactroot class="like-button">
+                  <button class="p-button">
+                    <span class="fa fa-fw fa-thumbs-up"></span>
+                    <span>いいね</span>
+                  </button>
+                  <div class="like-button__balloon">
+                    0
+                    <!-- いいねの数を表示 -->
+                  </div>
+                </div>
+              </div>
+              <div class="article-footer__user-list">
+                <div class="article-footer__user">
+                  <div class="js-hovercard" data-hovercard-target-name="ここはusername">
+                    <a itemprop="url" href="ここもusername">
+                      <img alt="ここもusername" class="thumb thumb--xs" src="ここは@article.user.avatar">
+                    </a>
+                  </div>
+                </div>
+                <!-- article-footer__userをいいねした人数分表示。10人を超える場合はlikerページへのリンクを出す -->
+              </div>
+            </div>
+            <div class="u-flex u-align-center">
+              <div class="article-footer__stock">
+                <div class="js-stockbutton" data-position="footer_menu" data-props="{"stock_status":false}">
+                  <div data-reactroot class="stock-button">
+                    <button>
+                      <div class="stock-button__stock">
+                        <div class="fa-stack">
+                          <span class="fa fa-folder-open fa-stack-1x unstock"></span>
+                        </div>
+                        <!-- react-text: 6 -->
+                        &nbsp;
+                        <!-- /react-text -->
+                        <span class="stock-button__label">ストック</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="article-footer__edit-request">
+                <a class="u-link-no-under-line" data-toggle="tooltip" title href="ここは/user/articles/article.id/edit" data-original-title="投稿者に記事をより良くするための提案ができます 💪">
+                  <span class="fa fa-send-o fa-lg"></span>
+                  <span>編集リクエスト</span>
+                </a>
+              </div>
+              <div class="dropdown article-footer__dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <span class="fa fa-ellipsis-h"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <a href="ここは/user.username/articles/article.id/md">
+                      <span class="fa fa-fw fa-file-text-o"></span>
+                      Markdownで本文を見る
+                    </a>
+                  </li>
+                  <li>
+                    <a data-torget=".js-report-form" data-toggle="modal" href="#">
+                      <i class="fa fa-fw fa-flag"></i>
+                      問題がある投稿を報告する
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="items-show-body_article-column-footer">
+            <div class="social-buttons">
+              <div class="social-buttons_twitter">
+                <!-- ここにシェアボタンを設置する -->
+              </div>
+              <div class="social-buttons_hatebu">
+                <!-- ここにシェアボタンを設置する -->
+              </div>
+              <div class="social-buttons_google-plus">
+                <!-- ここにシェアボタンを設置する -->
+              </div>
+              <div class="social-buttons_facebook">
+                <!-- ここにシェアボタンを設置する -->
+              </div>
+              <div class="social-buttons_pocket">
+                <!-- ここにシェアボタンを設置する -->
+              </div>
+            </div>
+            <div class="items-show-comment_wrapper" id="comments">
+              <!-- ここにコメント機能を付ける -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- ここにはモーダルで問題報告とかの機能が入る -->
+
+<%= render "layouts/footer" %>

@@ -1,0 +1,97 @@
+<div class="public-stream active">
+  <div>
+    <div class="flush-button"></div>
+    <div class="activities">
+      <% @articles.each do |article| %>
+        <div class="item-box track">
+          <div class="vertical-close-button close">
+            <i class="fa fa-angle-double-right"></i>
+          </div>
+          <div class="item-box-container-inner">
+            <div class="action-user-icon action">
+              <%= link_to user_path(article.user_id) do %>
+                <%= image_tag article.user.avatar, class: "user-icon", title: "#{article.user.username}" %>
+              <% end %>
+            </div>
+            <div class="item-box-area">
+              <div class="item-box-header">
+                <div class="action">
+                  <span class="user">
+                  <%= link_to "#{article.user.username}", user_path(article.user_id) %>
+                  </span>
+                  が<%= article.created_at.strftime('%Y/%m/%d') %>に
+                  <!-- 本当は何分前に投稿したかを表示 -->
+                  <span>投稿</span>
+                  しました
+                </div>
+                <div class="item-box-title">
+                  <h1>
+                    <%= link_to "#{article.title}", article_path(article.id) %>
+                  </h1>
+                  <ul class="item-box_tag-list list-unstyled">
+                    <li>
+                      <a href="#">テスト</a>
+                    </li>
+                    <li>
+                      <a href="#">テスト</a>
+                    </li>
+                    <li>
+                      <a href="#">テスト</a>
+                    </li>
+                    <!-- tag機能実装時にここにタグを表示 -->
+                  </ul>
+                </div>
+                <div class="item-status-box">
+                  <ul class="unstyled">
+                    <li>
+                      <i class="fa fa-like"></i>
+                      0
+                      <!-- いいね・コメント機能実装時にここに表示 -->
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-comment-o"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item-body-wrapper">
+                <div id="item-34df81643130153e08aa" class="item-body markdown-content bordered">
+                  ここに記事が入ります
+                </div>
+              </div>
+            </div>
+            <div class="loading"></div>
+          </div>
+          <fieldset class="toggle-button-field">
+            <legend class="toggle-button">
+              <span class="expand">
+                <i class="fa fa-angle-double-down"></i>
+              </span>
+              <span class="close">
+                <i class="fa fa-angle-double-up"></i>
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+        <!-- 20件表示 -->
+      <% end %>
+    </div>
+    <div class="tail">
+      <div class="more-button btn btn-default btn-block" tabindex="0">もっと見る</div>
+    </div>
+  </div>
+</div>
+<div class="public-stream">
+  <div>
+    <div class="circle-loading">
+      <p>読み込み中</p>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>

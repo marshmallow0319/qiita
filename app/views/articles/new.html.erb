@@ -1,0 +1,553 @@
+<%= render "layouts/header" %>
+<div class="public-editor">
+  <%= form_for @article, html: { class: "editor form js-editor", id: "new_draft_item" } do |f| %>
+    <div class="hidden">
+    </div>
+    <div class="editor_content">
+      <div class="editor-title js-title-form js-validation-error js-tag_data-validation-error" data-placement="bottom" data-original-title title>
+        <%= f.text_field :title, id: "js-title", class: "form-control", autofocus: true, placeholder: "タイトル", tabindex: "1" %>
+        <div class="editor-label">
+          <div class="editor-label_status-unposted">未投稿</div>
+        </div>
+      </div>
+      <div class="editor-tag js-tag-form-view js-validation-error js-tag_data-validation-error" data-placement="bottom" data-original-title title>
+        <div class="textoverlay-wrapper" style="margin: 0px; padding: 0px; overflow: hidden; display: block; position: relative;">
+          <div class="textoverlay" style="position: absolute; color: transparent; white-space: pre-wrap; word-wrap: break-word; overflow: hidden; margin: 0px; padding: 6px 12px; font-family: sans-serif; font-weight: 400; font-size: 14px; background-color: rgb(255, 255, 255); top: 1px; right: 1px; bottom: 1px; left: 1px;"></div>
+          <input autocomplete="off" class="form-control" id="draft_item_[tag_notation]" placeholder="タグをスペース区切りで5つまで入力(例: Ruby Rails:4.2.0)" tabindex="2" type="text" value style="background: transparent; position: relative; outline: 0px;">
+        </div>
+        <div class="js-tag-data"></div>
+      </div>
+      <div class="js-body-form-view editor-body half-previewing">
+        <div class="editor-markdown js-draft-body">
+          <div class="editor-markdown_header">
+            <span class="editor-markdown_tab-bar js-tabs">
+              <a tabindex="-1" class="editor-markdown_tab active js-tab" href="#markdown">本文</a>
+              <a target="_blank" class="editor-markdown_guideline hidden-xs" href="#">
+                <i class="fa fa-book"></i>
+              良い記事を書くには
+              </a>
+            </span>
+            <div class="editor-markdown_tool-bar">
+              <div class="editor-markdown_image-picker js-image-picker">
+                <div data-reactroot class="editor-markdown_image-picker-inner">
+                  <input type="file" tabindex="-1">
+                  <i class="fa fa-picture-o" data-rip="true" data-for="tooltip-for-image-picker" currentitem="false"></i>
+                  <div class="__react_component_tooltip place-top type-dark custom-tooltip" data-id="tooltip" style="left: 500px; top: 93px;">
+                    <!-- react-text: 5 -->
+                    添付する画像を選択
+                    <!-- /react-text -->
+                    <br>
+                    <!-- react-text: 7 -->
+                    またはドラッグ&ドロップ
+                    <!-- /react-text -->
+                  </div>
+                </div>
+              </div>
+              <div class="emoji-picker-launcher js-emoji-picker">
+                <div data-reactroot class="emoji-picker">
+                  <span class="emoji-picker_label">
+                    <i class="fa fa-smile-o" data-rip="絵文字" currentitem="false"></i>
+                    <div class="__react_component_tooltip place-top type-dark custom-tooltip" data-id="tooltip" style="left: 589px; top: 112px;">
+                      絵文字
+                    </div>
+                  </span>
+                  <div class="emoji-picker_container"></div>
+                </div>
+              </div>
+              <div class="editor-markdown_help js-markdown-help">
+                <div data-reactroot data-toggle="modal" data-target="#help">
+                  <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" data-container=".js-body-form-view" data-viewport=".js-body-form-view" data-tip="Markdown の書き方" currentitem="false"></i>
+                  <div class="__react_component_tooltip type-dark custom-tooltip" data-id="tooltip" style="left: 460px; top: 112px;">
+                    Markdownの書き方
+                  </div>
+                </div>
+              </div>
+              <div class="editor-markdown_toggle-buttons">
+                <i class="fa editor-markdown_toggle-icon-full-preview js-full-preview"></i>
+                <i class="fa editor-markdown_toggle-icon-half-preview js-half-preview"></i>
+                <i class="fa editor-markdown_toggle-icon-no-preview js-no-preview"></i>
+              </div>
+            </div>
+          </div>
+          <div class="editor-markdown_panel active" id="mark-down">
+            <div class="editor-markdown_textarea-wrapper">
+              <%= f.text_area :text, id: "editor-markdown", class: "editor-markdown_textarea js-validation-error js-raw_body-validation-error js-expanded_link_urls-validation-error", placeholder: "Markdownで入力", tabindex: "3" %>
+            </div>
+          </div>
+          <div class="editor-markdown_panel" id="diff"></div>
+        </div>
+        <div class="editor-preview">
+          <div class="editor-preview_header">
+            <div class="editor-preview_toggle-buttons">
+              <i class="fa editor-preview_toggle-icon-full-preview js-full-preview"></i>
+              <i class="fa editor-preview_toggle-icon-half-preview js-half-preview"></i>
+              <i class="fa editor-preview_toggle-icon-no-preview js-no-preview">
+                <div class="editor-preview_toggle-icon-text">編集に戻る</div>
+              </i>
+            </div>
+            <div class="editor-preview_title">プレビュー</div>
+            <label for="draft_item_slide">
+              <input name="draft_item[slide]" type="hidden" value="0">
+              <input class="js-preview-as-slide" type="checkbox" value="1" name="draft_item[slide]" id="draft_item_slide">
+              スライドモード
+            </label>
+          </div>
+          <div class="editor-preview_article js-preview">
+            <div data-reactroot class="mark-down-content"></div>
+          </div>
+          <div class="editor-preview_cheatsheet hidden-js js-editor-preview_cheatsheet" id="result" style="background-image: none;">
+            <h4 class="markdown-cheatsheet_title">
+              <i class="fa fa-question-circle"></i>
+              Markdown記法のヒント
+            </h4>
+            <div class="markdown-cheatsheet_block">
+              <div class="markdown-cheatsheet_item">
+                <div class="markdown-cheatsheet_header">見出し</div>
+                <div class="markdown-cheatsheet_content">
+                  # 見出し1
+                  <br>
+                  ## 見出し2
+                  <br>
+                  ### 見出し3
+                </div>
+              </div>
+              <div class="markdown-cheatsheet_item">
+                <div class="markdown-cheatsheet_header">強調</div>
+                <div class="markdown-cheatsheet_content">**強調**</div>
+              </div>
+              <div class="markdown-cheats_item">
+                <div class="markdown-cheatsheet_header">リンク</div>
+                <div class="markdown-cheatsheet_content">[リンク](http://...)</div>
+              </div>
+              <div class="markdown-cheatsheet_item">
+                <div class="markdown-cheatsheet_header">コード</div>
+                <div class="markdown-cheatsheet_content">
+                  ```ruby:filename.rb
+                  <br>
+                  コード
+                  <br>
+                  ```
+                </div>
+              </div>
+            </div>
+            <div class="markdown-cheatsheet_block">
+              <div class="markdown-cheatsheet_item">
+                <div class="markdown-cheatsheet_header">リスト</div>
+                <div class="markdown-cheatsheet_content">
+                  - リスト1
+                  <br>
+                  - リスト2
+                  <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- リスト2-1
+                </div>
+                <div class="markdown-cheatsheet_content">
+                  1. 番号付きリスト1
+                  <br>
+                  2. 番号付きリスト2
+                  <br>
+                  3. 番号付きリスト3
+                </div>
+                <div class="markdown-cheatsheet_content">
+                  - [ ] チェックボックス1
+                  <br>
+                  - [ ] チェックボックス2
+                  <br>
+                  - [x] チェックボックス3
+                </div>
+              </div>
+              <div class="markdown-cheatsheet_item markdown-cheatsheet_more">
+                <i class="fa fa-ellipsis-v"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div aria-hidden="true" class="modal fade markdown-help js-markdown-help-modal" id="help" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+                  <i class="fa fa-times"></i>
+                </button>
+                <h4 class="markdown-help_title modal-title">Markdownの書き方</h4>
+                <span class="markdown-help_link">
+                  ("
+                  <a target="_blank" href="#">もっと詳しく知りたい方はこちら</a>
+                  ")
+                </span>
+              </div>
+              <div class="markdown-help_body modal-body">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="active" role="tab">
+                    <a href="#home" aria-controls="home" data-toggle="tab" role="tab">
+                      レイアウト
+                      <i class="fa fa-list-ol tabicon"></i>
+                    </a>
+                  </li>
+                  <li role="tab">
+                    <a aria-controls="profile" data-toggle="tag" href="#profile" role="tab">
+                      装飾
+                      <i class="fa fa-bold tabicon"></i>
+                    </a>
+                  </li>
+                  <li role="tab">
+                    <a aria-controls="messages" data-toggle="tab" href="#messages" role="tab">
+                      挿入
+                      <i class="fa fa-link tabicon"></i>
+                    </a>
+                  </li>
+                  <li role="tab">
+                    <a area-controls="settings" data-toggle="tab" href="#settings" role="tab">
+                      <i class="fa fa-table tabicon"></i>
+                    </a>
+                  </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane active" id="home" role="tabpanel">
+                    <table class="markdown-content">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <h4></h4>
+                            <h1>見出し1</h1>
+                            <h2>見出し2</h2>
+                            <h3>見出し3</h3>
+                            <h4>見出し4</h4>
+                            <h5>見出し5</h5>
+                            <h6>見出し6</h6>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <testarea class="heading_code">
+                                # 見出しh1## 見出しh2### 見出しh3#### 見出しh4##### 見出しh5###### 見出しh6
+                              </testarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <li>リスト</li>
+                            <li>リスト</li>
+                            <ul>
+                              <li>リスト</li>
+                            </ul>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="list_code">- リスト- リスト    - リスト</textarea>
+                              <div class="markdown-help_info">タブで階層を下げることができます</div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <li style="list-style-type: decimal;">番号付きリスト</li>
+                            <li style="list-style-type: decimal;">番号付きリスト</li>
+                            <ul>
+                              <li style="list-style-type: decimal;"></li>
+                            </ul>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="list_code">1. 番号付きリスト2. 番号付きリスト    3. 番号付きリスト</textarea>
+                              <div class="markdown-help_info">タブで階層を下げることができます</div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <li class="task-list-item" style="margin-left: 1em">
+                              <input class="task-list-item-checkbox" disabled type="checkbox">
+                              チェックボックス
+                            </li>
+                            <li class="task-list-item" style="margin-left: 1em">
+                              <input checked class="task-list-item-checkbox" disabled type="checkbox">
+                              チェックボックス
+                            </li>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="checked_code">- [ ] チェックボックス- [x] チェックボックス</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="profile" role="tabpanel">
+                    <table class="markdown-content">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <b>強調（太字）</b>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="strong_code">**text**</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <i>強調（斜体）</i>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="emphasis_code">*text*</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <s>打ち消し線</s>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="strikethrough_code">~~ text ~~</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="highlight">
+                          <td>
+                            <code>コードのインライン表示</code>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="inline_code">`code`</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <blockquote style="margin: 0;">
+                              引用
+                              <blockquote style="margin: 0;">引用</blockquote>
+                            </blockquote>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="blockquotes_code">> text>> text</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="messages" role="tabpanel">
+                    <table class="markdown-content">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a href="#">リンク</a>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="link_code">[title](http://~)</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>画像埋め込み</td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="image_code">![alt](http://~)</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>水平線</td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="horizontal_rules_code">* * *</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="highlight">
+                          <td style="padding: 0 8px;">
+                            <div class="markdown-content">
+                              <div class="code-frame" data-lang="ruby" style="width: 220px; border: 1px solid #eaeaea;">
+                                <div class="code-lang">
+                                  <span class="bold">qiita.rb</span>
+                                </div>
+                                <pre>
+                                  <span class="nb">puts</span>
+                                  <span class="s1">'code with syntax'</span>
+                                </pre>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="syntax_code">```ruby:qiita.rbputs 'code with syntax'```</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Markdownのエスケープ</td>
+                          <td>
+                            <div class="markdown-content">
+                              <textarea class="escape_markdown_code">\</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="settings" role="tabpanel">
+                    <div class="markdown-content">
+                      <h2>入力補完を利用する場合</h2>
+                      <img class="table-gif" src="#">
+                      <h2>手動で入力する場合</h2>
+                      <textarea class="tablesample_code">
+                        | Left align       |       Right align |    Center align    ||:-----------------|------------------:|:------------------:|| This             |              This |        This        || column           |            column |       column       || will             |              will |        will        || be               |                be |         be         || left             |             right |       center       || aligned          |           aligned |      aligned       |
+                      </textarea>
+                      <table class="tablesample">
+                        <thead>
+                          <tr>
+                            <th style="text-align: left"> Left align</th>
+                            <th style="text-align: right">Right align</th>
+                            <th style="text-align: center">Center align</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="text-align: left"> This</td>
+                            <td style="text-align: right"> This</td>
+                            <td style="text-align: center"> This</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: left"> column</td>
+                            <td style="text-align: right">column</td>
+                            <td style="text-align: center"> column</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: left"> will</td>
+                            <td style="text-align: right">will</td>
+                            <td style="text-align: center"> will</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: left"> be</td>
+                            <td style="text-align: right">be</td>
+                            <td style="text-align: center"> be</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: left"> left</td>
+                            <td style="text-align: right">right</td>
+                            <td style="text-align: center"> center</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: left"> aligned</td>
+                            <td style="text-align: right">aligned</td>
+                            <td style="text-align: center"> aligned</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="editor-footer">
+      <div class="editor-footer_save editor-save">
+        <div class="editor-save_submit">
+          <div class="editor-submit">
+            <div class="btn-group editor-submit_submit-btn-group js-submit-button-wrapper">
+              <%= button_tag type: "submit", class: "btn btn-primary js-submit-button editor-submit_submit-btn", tabindex: "12" do %>
+<!--                 <span class="editor-submit_submit-btn-label" id="save">
+                  <i class="fa fa-save"></i>
+                  下書き保存
+                </span>
+                <span class="editor-submit_submit-btn-label" id="secret-post">
+                  <i class="fa fa-lock"></i>
+                  限定共有投稿
+                </span> -->
+                <span class="editor-submit_submit-btn-label active" id="post">
+                  <i class="fa fa-upload"></i>
+                  Qiita に投稿
+                  <!-- 選んだタブにactiveクラスを付ける -->
+                </span>
+<!--                 <span class="editor-submit_submit-btn-label" id="coediting-post">
+                  <i class="fa fa-users"></i>
+                  共同編集モードで投稿
+                </span>-->
+              <% end %>
+              <a class="btn btn-primary dropdown-toggle js-dropdown-button visible-js editor-submit_dropdown-toggle">
+                <i class="fa fa-caret-up"></i>
+              </a>
+              <ul class="list-unstyled editor-submit_dropdown-menu js-dropdown-menu visible-js">
+                <li>
+                  <a class="editor-submit_dropdown-item active" href="#save">
+                    <i class="fa fa-check"></i>
+                    <i class="fa fa-save"></i>
+                    下書き保存
+                  </a>
+                </li>
+                <li>
+                  <a class="editor-submit_dropdown-item" href="#secret-post">
+                    <i class="fa fa-check"></i>
+                    <i class="fa fa-lock"></i>
+                    限定共有投稿
+                  </a>
+                </li>
+                <li>
+                  <a class="editor-submit_dropdown-item" href="#post">
+                    <i class="fa fa-check"></i>
+                    <i class="fa fa-upload"></i>
+                    Qiita に投稿
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="editor-footer_save editor-save">
+        <div class="editor-save_auto-save-notification js-auto-save-notification">
+          <i class="fa fa-check-circle"></i>
+          <span class="hidden-xs"> 自動保存しました</span>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="modal fade js-creating-modal creating-modal" role="dialog" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="option creating-modal_twitter">
+              <a target="_blank" href="https://oauth.qiita.com/auth/twitter?callback_action=login_or_signup">
+                <i class="fa fa-twitter"></i>
+                Twitterと紐付けてTwitterで共有する
+              </a>
+            </div>
+            <div class="option creating-modal_github">
+              <a target="_blank" href="https://oauth.qiita.com/auth/github?callback_action=login_or_signup">
+                <i class="fa fa-github"></i>
+                GitHubと紐付けてGistに連携投稿する
+              </a>
+            </div>
+            <div class="creating-modal_post-alert alert alert-warning js-modal-confirmation" style="display: none;">
+              パブリックなQiitaに記事を投稿しようとしています。
+              <br>
+              ご利用中のQiita:Teamと違い、ウェブに一般公開されインターネット上の誰でも検索、閲覧できます。
+              <div class="checkbox">
+                <label>
+                  <input class="js-confirmation-checkbox" type="checkbox">
+                  Qiita に投稿する
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="text-center">
+              <button class="btn btn-primary">送信</button>
+              <a class="btn btn-link" data-dismiss="modal" href="#">キャンセル</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

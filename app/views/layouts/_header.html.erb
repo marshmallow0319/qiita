@@ -55,12 +55,12 @@
               </div>
             </div>
             <div class="shared-header_new-item btn-group">
-              <a class="shared-header_new-item_btn shared-header_new-item_post btn" href="/drafts/new">
+              <%= link_to new_article_path, class: "shared-header_new-item_btn shared-header_new-item_post btn" do %>
                 <i class="fa fa-lg fa-edit"></i>
                 <!-- react-text: 36 -->
                 投稿する
                 <!-- /react-text -->
-              </a>
+              <% end %>
               <a class="shared-header_new-item_btn dropdown-toggle btn">
                 <i class="fa fa-caret-down"></i>
                 <span class="shared-header_new-item_xs-edit">
@@ -85,9 +85,9 @@
                 </div>
               </div>
             </div>
-            <div class="shared-header_user open">
-              <a class="shared-header_user_clickable">
-                <%= image_tag("user-avatar.png", class: "shared-header_user_image", size: "32x32" ) %>
+            <div class="shared-header_user">
+              <a class="shared-header_user_clickable" data-toggle="dropdown" href="#" aria-expanded="false">
+                <%= image_tag current_user.avatar, class: "shared-header_user_image", size: "32x32" %>
               </a>
               <ul class="dropdown-menu shared-header_user_dropdown">
                 <li>

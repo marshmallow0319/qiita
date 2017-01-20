@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 #   delete :sign_out, to: 'devise/sessions#destroy', as: :destroy_user_session
 # end
   resources :users, only: [:show, :edit, :update]
-  resources :articles, only: [:index]
+  resources :articles, only: [:show, :new, :create, :destroy]
 
 end

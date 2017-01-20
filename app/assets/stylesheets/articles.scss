@@ -1,3 +1,181 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Abel);
+$textEditorHeight: calc(100vh - 100px);
+$editorBoxHeight: calc(100vh - 100px - 83px - 150px);
+$editorHeight: calc(100vh - 100px - 83px - 150px - 48px);
+$editorResultHeight: calc(100vh - 100px - 83px - 150px - 72px);
+
+html, body {
+  height: 100%;
+  background-color: #dfdfdf;
+  font-family: 'Abel', sans-serif;
+}
+
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+header {
+  height: 80px;
+  background-color: #222222;
+  nav {
+    width: 1170px;
+    margin: 0 auto;
+    height: 100%;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 33%;
+      float: left;
+      li {
+        height: 100%;
+        a {
+          display: block;
+          height: 100%;
+          line-height: 80px;
+          color: white;
+          font-size: 26px;
+          font-family: 'Lobster', cursive;
+          &:hover {
+            background-color: #444444;
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+    .top-bar-center li {
+      margin: 0 auto;
+      width: 250px;
+      a {
+        padding: 0 40px;
+      }
+    }
+    .top-bar-right li {
+      float: right;
+      height: 40px;
+      a {
+        padding: 0 20px;
+        margin: 20px 0;
+        line-height: 40px;
+        border: 1px solid white;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.headingtype-1 {
+  font-size: 28px;
+  line-height: 40px;
+  margin: 20px 0 10px;
+  padding: 10px 0;
+  &:after {
+    content: '';
+    display: block;
+    width: 1.5em;
+    height: 3px;
+  }
+}
+
+.headingtype-green:after {
+  background-color: rgb(59,169,0);
+}
+
+.memos {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  .delete-btn {
+    display: block;
+    float: right;
+    padding: 0 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    &:active {
+      background-color: #cccccc;
+    }
+  }
+}
+
+.text-editor {
+  height: $textEditorHeight;
+}
+
+.editor-box {
+  height: $editorBoxHeight;
+  .editor,{
+    height: 100%;
+    margin-bottom: 20px;
+    input, textarea {
+      border: none;
+      outline: none;
+    }
+    input {
+      padding: 6px 12px;
+      font-size: 25px;
+      width: 100%;
+    }
+    textarea {
+      border: none;
+      resize: none;
+      height: $editorHeight;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+  .result {
+    #title-result {
+      margin: 0;
+      height: 72px;
+    }
+    #result {
+      font-size: 16px;
+      line-height: 25px;
+      max-height: $editorResultHeight;
+      overflow: auto;
+    }
+  }
+  .actions {
+    input {
+      font-size: 30px;
+      padding: 10px 8px;
+    }
+    .btn-submit {
+      background-color: #222222;
+      color: white;
+      &:active {
+        background-color: #555555;
+      }
+    }
+  }
+}
+
+.preview {
+  background-color: #fafafa;
+  padding: 0 20px;
+  line-height: 2em;
+  h1, h2, h3, h4, h5, p {
+    line-height: 2em;
+  }
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.memo-content {
+  background-color: white;
+  box-shadow: 0 0 2px;
+  padding: 20px;
+}
