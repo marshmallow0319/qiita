@@ -1,0 +1,118 @@
+<%= render "layouts/header" %>
+  <div id="main">
+    <div class="container stock-items-page">
+      <div class="row">
+        <div class="col-sm-3">
+          <h2 class="stock-items-page__header">
+            <span class="fa fa-folder-open"></span>
+            ストック一覧
+          </h2>
+          <p class="stock-items-page__description">あなたがストックした記事の一覧です。</p>
+          <div class="side-panel-item">
+            <h3 class="side-panel-item__header">ストック内検索</h3>
+            <div class="side-panel-item__body">
+              <form action="/search" accept-charset="UTF-8" method="get">
+                <div class="stock-items-page__search-form">
+                  <input type="text" name="q" id="q" class="form-control stock-items-page__search-form-input">
+                  <button class="btn btn-default" type="submit">
+                    <span class="fa fa-search"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div data-react-class="T.TagsFacetContainer" data-react-props="{"tag_name":null}">
+            <div data-reactroot class="side-panel-item">
+              <h3 class="side-panel-item__header">タグ</h3>
+              <ul class="side-panel-item-menu">
+                <li>
+                  <a href="ここは/stocks/tags/tag.name" class="side-panel-item-menu__item">
+                    <span class="side-panel-item-menu__label">
+                      <img src="ここはincrementsオリジナルのタグ画像になってる">
+                      <!-- react-text: 10 -->
+                      <!-- &nbsp; -->
+                      <!-- /react-text -->
+                      <!-- react-text: 11 -->
+                      ここはタグ名が入る
+                      <!-- /react-text -->
+                    </span>
+                    <span class="side-panel-item-menu__count">0</span>
+                    <!-- ここはstock.tag.taged_count -->
+                  </a>
+                </li>
+                <!-- ここにリストを20件まで表示する。超えた場合は下にもっと見るを表示する。表示されるリストはおそらく自分がストックした記事についていたタグを全取得して数が多い順に並べている -->
+                <span class="side-panel-item-menu__more p-button p-button--m">もっと表示する</span>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="table-list">
+            <article class="media item-link" data-item-url="ここは@stock.article.id" data-secret="0" data-uuid="ここは@stock.article.id">
+              <a class="media__image thumb thumb--m" href="ここはuser_path(@stock.user.id)">
+                <img alt title="ここはstock.user.username" src="ここはstock.user.avatar">
+              </a>
+              <div class="media__body">
+                <div class="item-link__info">
+                  <a href="ここはstock.user.username">投稿者名</a>
+                  が投稿日時に投稿
+                  <span class="label label-warning">
+                    <span class="fa fa-clock-o" data-placement="top" data-toggle="tooltip" title data-original-title="最近更新されていない記事です"></span>
+                  </span>
+                  <!-- 一定期間更新がなかった場合に表示 -->
+                </div>
+                <div class="item-link__title">
+                  <a class="u-link-no-underline" href="ここはstock.article.id">記事タイトル</a>
+                </div>
+                <div class="u-flex">
+                  <div data-react-class="T.StockButtonContainer" data-react-props="{"position":"stock_item","stock_status":true,"url_name":"投稿者のusername","uuid":"記事のid"}">
+                    <div data-reactroot class="stock-button stock-button--stocked">
+                      <button data-effect="solid" data-tip="ストック済み" currentitem="false">
+                        <div class="stock-button__unstock">
+                          <div class="fa-stack">
+                            <span class="fa fa-folder fa-stack-1x"></span>
+                            <span class="fa fa-check fa-stack-1x fa-inverse"></span>
+                          </div>
+                          <!-- react-text: 7 -->
+                          &nbsp;
+                          <!-- /react-text-->
+                          <span class="stock-button__label">ストック</span>
+                        </div>
+                      </button>
+                      <div class="__react_component_tooltip place-top type-dark" data-id="tooltip" style="left: 340px; top: 91px;">ストック済み</div>
+                    </div>
+                  </div>
+                  <ul class="Tag-list">
+                    <li class="Tag-list__item">
+                      <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
+                    </li>
+                    <li class="Tag-list__item">
+                      <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
+                    </li>
+                    <li class="Tag-list__item">
+                      <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
+                    </li>
+                    <!-- 登録タグ数リストを表示 -->
+                  </ul>
+                </div>
+              </div>
+              <ul class="item-link__status">
+                <li>
+                  <span class="fa fa-thumbs-up unlike"></span>
+                  0
+                  <!-- like数を表示、like済みは緑にする -->
+                </li>
+                <li>
+                  <span class="fa fa-comment-o"></span>
+                  <a href="/yuku_t/items/3740cc9a5f8503693bd2">0</a>
+                  <!-- コメント数を表示、同時に記事へのリンクボタンにもなっている -->
+                </li>
+              </ul>
+            </article>
+            <!-- 20記事まで表示 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%= render "layouts/footer" %>
