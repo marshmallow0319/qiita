@@ -48,68 +48,59 @@
         </div>
         <div class="col-sm-9">
           <div class="table-list">
-            <article class="media item-link" data-item-url="ここは@stock.article.id" data-secret="0" data-uuid="ここは@stock.article.id">
-              <a class="media__image thumb thumb--m" href="ここはuser_path(@stock.user.id)">
-                <img alt title="ここはstock.user.username" src="ここはstock.user.avatar">
-              </a>
-              <div class="media__body">
-                <div class="item-link__info">
-                  <a href="ここはstock.user.username">投稿者名</a>
-                  が投稿日時に投稿
-                  <span class="label label-warning">
-                    <span class="fa fa-clock-o" data-placement="top" data-toggle="tooltip" title data-original-title="最近更新されていない記事です"></span>
-                  </span>
-                  <!-- 一定期間更新がなかった場合に表示 -->
-                </div>
-                <div class="item-link__title">
-                  <a class="u-link-no-underline" href="ここはstock.article.id">記事タイトル</a>
-                </div>
-                <div class="u-flex">
-                  <div data-react-class="T.StockButtonContainer" data-react-props="{"position":"stock_item","stock_status":true,"url_name":"投稿者のusername","uuid":"記事のid"}">
-                    <div data-reactroot class="stock-button stock-button--stocked">
-                      <button data-effect="solid" data-tip="ストック済み" currentitem="false">
-                        <div class="stock-button__unstock">
-                          <div class="fa-stack">
-                            <span class="fa fa-folder fa-stack-1x"></span>
-                            <span class="fa fa-check fa-stack-1x fa-inverse"></span>
-                          </div>
-                          <!-- react-text: 7 -->
-                          &nbsp;
-                          <!-- /react-text-->
-                          <span class="stock-button__label">ストック</span>
-                        </div>
-                      </button>
-                      <div class="__react_component_tooltip place-top type-dark" data-id="tooltip" style="left: 340px; top: 91px;">ストック済み</div>
-                    </div>
+            <% @stocks.each do |stock| %>
+              <article class="media item-link">
+                <%= link_to user_path(stock.article.user.id), class: "media__image thumb thumb--m" do %>
+                  <%= image_tag stock.article.user.avatar %>
+                <% end %>
+                <div class="media__body">
+                  <div class="item-link__info">
+                  <%= link_to "#{stock.article.user.username}", user_path(stock.article.user.id) %>
+                    が<%= stock.article.created_at.strftime('%Y/%m/%d') %>に投稿
+                    <span class="label label-warning">
+                      <span class="fa fa-clock-o" data-placement="top" data-toggle="tooltip" title data-original-title="最近更新されていない記事です"></span>
+                    </span>
+                    <!-- 一定期間更新がなかった場合に表示 -->
                   </div>
-                  <ul class="Tag-list">
-                    <li class="Tag-list__item">
-                      <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
-                    </li>
-                    <li class="Tag-list__item">
-                      <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
-                    </li>
-                    <li class="Tag-list__item">
-                      <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
-                    </li>
-                    <!-- 登録タグ数リストを表示 -->
-                  </ul>
+                  <div class="item-link__title">
+                    <%= link_to "#{stock.article.title}", article_path(stock.article.id), class: "u-link-no-underline" %>
+                  </div>
+                  <div class="u-flex">
+                    <div class="T.StockButtonContainer js-stock-button-<%= stock.article.id %>">
+                      <%= render partial: "stocks/stock_button", locals: { article: stock.article, stock: stock } %>
+                    </div>
+                    <ul class="Tag-list">
+                      <li class="Tag-list__item">
+                        <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
+                      </li>
+                      <li class="Tag-list__item">
+                        <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
+                      </li>
+                      <li class="Tag-list__item">
+                        <a class="u-link-unstyled Tag-list__label" href="ここはtag_path(article.tag.id)">ここはタグ名</a>
+                      </li>
+                      <!-- 登録タグ数リストを表示 -->
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <ul class="item-link__status">
-                <li>
-                  <span class="fa fa-thumbs-up unlike"></span>
-                  0
-                  <!-- like数を表示、like済みは緑にする -->
-                </li>
-                <li>
-                  <span class="fa fa-comment-o"></span>
-                  <a href="/yuku_t/items/3740cc9a5f8503693bd2">0</a>
-                  <!-- コメント数を表示、同時に記事へのリンクボタンにもなっている -->
-                </li>
-              </ul>
-            </article>
-            <!-- 20記事まで表示 -->
+                <ul class="item-link__status">
+                  <li>
+                    <span class="fa fa-thumbs-up unlike"></span>
+                    0
+                    <!-- like数を表示、like済みは緑にする -->
+                  </li>
+                  <li>
+                    <span class="fa fa-comment-o"></span>
+                    <a href="/yuku_t/items/3740cc9a5f8503693bd2">0</a>
+                    <!-- コメント数を表示、同時に記事へのリンクボタンにもなっている -->
+                  </li>
+                </ul>
+              </article>
+              <!-- 20記事まで表示 -->
+            <% end %>
+            <div class="text-center">
+              <%= paginate @stocks %>
+            </div>
           </div>
         </div>
       </div>

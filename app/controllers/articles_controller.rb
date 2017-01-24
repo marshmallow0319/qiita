@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: :show
 
   def index
-    @articles = Article.order(created_at: :desc)
+    @articles = Article.order(created_at: :desc).page(params[:page]).per(20).includes(:user)
   end
 
   def new
@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
   def show
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @html = markdown.render(@article.text)
+    @stock = @article.stocks.find_by(user_id: current_user.id)
   end
 
   private
@@ -39,6 +40,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text).merge(user_id: current_user.id)
   end
 
+  private
   def set_article
     @article = Article.find(params[:id])
   end
