@@ -113,20 +113,8 @@
           </div>
           <div class="u-flex u-align-center s-flex-justiry-between s-pdv-5 u-shrink-0">
             <div class="article-aside-header__stock">
-              <div class="js-stockbutton" data-position="top" data-props={"stock_status":false}>
-                <div data-reactroot="" class="stock-button">
-                  <button currentitem="false">
-                    <div class="stock-button__stock">
-                      <div class="fa-stack">
-                        <span class="fa fa-folder-open fa-stack-1x unstock"></span>
-                      </div>
-                      <!-- react-text: 6 -->
-                      &nbsp;
-                      <!-- /react-text -->
-                      <span class="stock-button__label">ストック</span>
-                    </div>
-                  </button>
-                </div>
+              <div class="js-stock-button-<%= @article.id %> js-stockbutton" data-position="top" data-props={"stock_status":false}>
+                <%= render partial: "stocks/stock_button", locals: { article: @article, stock: @stock } %>
               </div>
             </div>
             <div class="dropdown">
@@ -267,20 +255,8 @@
             </div>
             <div class="u-flex u-align-center">
               <div class="article-footer__stock">
-                <div class="js-stockbutton" data-position="footer_menu" data-props="{"stock_status":false}">
-                  <div data-reactroot class="stock-button">
-                    <button>
-                      <div class="stock-button__stock">
-                        <div class="fa-stack">
-                          <span class="fa fa-folder-open fa-stack-1x unstock"></span>
-                        </div>
-                        <!-- react-text: 6 -->
-                        &nbsp;
-                        <!-- /react-text -->
-                        <span class="stock-button__label">ストック</span>
-                      </div>
-                    </button>
-                  </div>
+                <div class="js-stock-button-<%= @article.id %> js-stockbutton" data-position="footer_menu" data-props="{"stock_status":false}">
+                  <%= render partial: "stocks/stock_button", locals: { article: @article, stock: @stock } %>
                 </div>
               </div>
               <div class="article-footer__edit-request">

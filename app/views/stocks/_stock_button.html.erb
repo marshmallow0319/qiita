@@ -1,0 +1,30 @@
+<% if article.stocked_user?(current_user) %>
+  <div data-reactroot class="stock-button stock-button--stocked">
+    <%= button_to article_stock_path(article, stock), method: :delete, remote: true do %>
+      <div class="stock-button__unstock">
+        <div class="fa-stack">
+          <span class="fa fa-folder fa-stack-1x"></span>
+          <span class="fa fa-check fa-stack-1x fa-inverse">
+        </div>
+        <!-- react-text: 6 -->
+        <!-- &nbsp; -->
+        <!-- /react-text -->
+        <span class="stock-button__label">ストック</span>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div data-reactroot class="stock-button">
+    <%= button_to article_stocks_path(article), remote: true do %>
+      <div class="stock-button__stock">
+        <div class="fa-stack">
+          <span class="fa fa-folder-open fa-stack-1x unstock"></span>
+        </div>
+        <!-- react-text: 6 -->
+        <!-- &nbsp; -->
+        <!-- /react-text -->
+        <span class="stock-button__label">ストック</span>
+      </div>
+    <% end %>
+  </div>
+<% end %>

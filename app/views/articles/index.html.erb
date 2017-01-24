@@ -5,7 +5,7 @@
       <div class="col-sm-9">
         <div class="feed-page_header">
           <h2>プログラミング知識を共有しよう。</h2>
-          <a class="btn btn-primary" track="click" data-label="HomeIndexToItemsNews" href="/drafts/new">ノウハウ・TIpsを投稿する</a>
+          <%= link_to "ノウハウ・TIpsを投稿する",new_article_path, class: "btn btn-primary" %>
         </div>
         <div class="stream-container">
           <nav>
@@ -21,9 +21,6 @@
                   自分の投稿
                   <span class="label label-info">0</span>
                 </a>
-              </li>
-              <li class="stock-tab pull-right" data-type="stock">
-                <a href="/stock">ストック</a>
               </li>
               <!-- 選んでるタブにactiveクラスを付ける -->
             </ul>
