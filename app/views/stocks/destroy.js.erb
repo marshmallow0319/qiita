@@ -1,0 +1,1 @@
+$(".js-stock-button-<%= @article.id %>").html("<%= j(render partial: 'stocks/stock_button', locals: { article: @article, stock: @stock }) %>");
