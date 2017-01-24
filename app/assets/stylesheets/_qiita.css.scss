@@ -1316,6 +1316,10 @@ img {
         width: 100%;
         text-align: center;
     }
+
+    &-inverse {
+        color: #fff;
+    }
 }
 
 .close {
@@ -2988,8 +2992,15 @@ img {
         }
 
         &--stocked {
+
             button {
                 color: #79b74a;
+
+                .fa-check {
+                    top: 2px;
+                    left: 2px;
+                    font-size: 11px;
+                }
             }
         }
     }
