@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :stocks
   validates :username, :email, :password, presence: true
 
+  mount_uploader :avatar, AvatarUploader
+
   attr_accessor :login
 
   def self.find_first_by_auth_conditions(warden_conditions)
