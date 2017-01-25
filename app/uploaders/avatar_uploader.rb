@@ -2,10 +2,6 @@
 
 class AvatarUploader < CarrierWave::Uploader::Base
 
-  version :thumb_270 do
-    process :resize_to_fit => [270, 270]
-  end
-
   def default_url
     "default.png"
   end
