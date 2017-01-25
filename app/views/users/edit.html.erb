@@ -11,7 +11,27 @@
           </h1>
           <div class="settings_panel-item">
             <%= form_for(current_user, html: {class: "user-form", id: "edit_user_#{current_user.id}"} ) do |f| %>
-              <script data-url_name="#" id="js-user" type="application/json"></script>
+              <div class="form-group">
+                <%= f.label :avatar, "アイコン" %>
+                <div class="panel-body">
+                  <div class="pull-left custom-image_image-container">
+                    <%= image_tag current_user.avatar, width: "96px", height: "96px", class: "js-user-icon" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :avatar, class: "custom-image_image-select" do %>
+                      <%= f.file_field :avatar %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group setting-form-group url_name-group">
+                <%= f.label :username, "ユーザ名" %>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <%= f.text_field :username, class: "form-control", value: "#{current_user.username}", placeholder: "ユーザ名" %>
+                  </div>
+                </div>
+              </div>
               <div class="form-group profile-settings_ignore-reils-error">
                 <%= f.label :firstname, "名前" %>
                 <div class="row">

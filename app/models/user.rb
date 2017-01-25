@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :stocks
   validates :username, :email, :password, presence: true
 
+  mount_uploader :avatar, AvatarUploader
+
   attr_accessor :login
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -28,7 +30,8 @@ class User < ActiveRecord::Base
         provider: auth.provider,
         email:    User.dummy_email(auth),
         password: Devise.friendly_token[0, 20],
-        username: auth.info.nickname
+        username: auth.info.nickname,
+        avatar: auth.info.image
       )
     end
 
