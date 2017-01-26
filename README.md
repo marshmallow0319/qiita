@@ -72,3 +72,15 @@
 - user_id :integer
 - prototype_id :integer
 - content :text
+
+# like
+
+## association
+`belongs_to :user, :article`
+
+## table
+- id :integer
+- created_at :timestamp
+- updated_at :timestamp
+- user_id :integer
+- article_id :integer
