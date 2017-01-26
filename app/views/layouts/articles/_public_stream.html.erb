@@ -64,26 +64,33 @@
             </div>
             <div class="loading"></div>
           </div>
-          <fieldset class="toggle-button-field">
-            <legend class="toggle-button">
-              <span class="expand">
-                <i class="fa fa-angle-double-down"></i>
-              </span>
-              <span class="close">
-                <i class="fa fa-angle-double-up"></i>
-              </span>
-            </legend>
-          </fieldset>
+          <div class="text-center">
+            <fieldset class="toggle-button-field">
+              <legend class="toggle-button">
+                <span class="expand">
+                  <i class="fa fa-angle-double-down"></i>
+                </span>
+  <!--               <span class="close">
+                  <i class="fa fa-angle-double-up"></i>
+                </span>
+                非同期で開閉を実装する -->
+              </legend>
+            </fieldset>
+          </div>
         </div>
         <!-- 20件表示 -->
       <% end %>
+      <div class="text-center">
+        <%= paginate @articles %>
+      </div>
     </div>
-    <div class="tail">
+<!--     <div class="tail">
       <div class="more-button btn btn-default btn-block" tabindex="0">もっと見る</div>
     </div>
+    ページネーションをtwitter風のスクロールに変える-->
   </div>
 </div>
-<div class="public-stream">
+<!-- <div class="public-stream">
   <div>
     <div class="circle-loading">
       <p>読み込み中</p>
@@ -95,3 +102,4 @@
     </div>
   </div>
 </div>
+ローディング中のjsを追加する-->
