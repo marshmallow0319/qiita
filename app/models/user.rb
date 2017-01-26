@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :comments
   has_many :stocks
+  has_many :likes
   validates :username, :email, :password, presence: true
 
   mount_uploader :avatar, AvatarUploader
