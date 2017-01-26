@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: :index
   before_action :authenticate_user!, only: :new
-  before_action :set_article, only: :show
+  before_action :set_article, only: [:edit, :show, :update, :destroy]
 
   def index
     @articles = Article.order(created_at: :desc).page(params[:page]).per(20).includes(:user)
@@ -31,6 +31,19 @@ class ArticlesController < ApplicationController
     @stock = @article.stocks.find_by(user_id: current_user.id)
   end
 
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      flash[:notice] = "編集が成功しました"
+      redirect_to root_path
+    else
+      flash[:notice] = "入力内容が正しくありません"
+      render :edit
+    end
+  end
+
   private
   def move_to_index
     redirect_to action: :index unless user_signed_in?
@@ -40,7 +53,6 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text).merge(user_id: current_user.id)
   end
 
-  private
   def set_article
     @article = Article.find(params[:id])
   end

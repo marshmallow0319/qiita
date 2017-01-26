@@ -107,8 +107,15 @@
                 </span>
               </div>
             </div>
-<!--             <div class="u-flex u-align-center s-pdv-5 mobile-hidden"></div>
-            <div class="u-flex u-align-center s-pdv-5 mobilehidden"></div>
+            <% if @article.user_id == current_user.id %>
+              <div class="u-flex u-align-center s-pdv-5 mobile-hidden">
+                <%= link_to edit_article_path(@article.id), class: "article-aside-header__edit btn btn-default btn-xs" do %>
+                  <span class="fa fa-pencil"></span>
+                  投稿を編集
+                <% end %>
+              </div>
+            <% end %>
+<!--             <div class="u-flex u-align-center s-pdv-5 mobilehidden"></div>
             コメント、更新などがあった場合ここに表示する機能を付ける -->
           </div>
           <div class="u-flex u-align-center s-flex-justiry-between s-pdv-5 u-shrink-0">
@@ -142,6 +149,14 @@
                     問題がある投稿を報告する
                   </a>
                 </li>
+                <% if @article.user_id == current_user.id %>
+                  <li>
+                    <%= link_to article_path(@article.id), method: :delete do %>
+                      <span class="fa fa-fw fa-trash-o"></span>
+                      削除
+                    <% end %>
+                  </li>
+                <% end %>
               </ul>
             </div>
           </div>
