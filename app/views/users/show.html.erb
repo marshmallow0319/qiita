@@ -47,24 +47,32 @@
           <div class="new-user-page-profile_info_body new-user-page-profile_description">
             <%= @user.profile %>
           </div>
-          <div class="new-user-page-profile_info_body">
-            <i class="fa fa-fw fa-envelope"></i>
-            <%= link_to @user.email, "mailto:#{@user.email}"  %>
-          </div>
-          <div class="new-user-page-profile_info_body">
-            <i class="fa fa-fw fa-link"></i>
-            <%= link_to @user.website, target: "_blank", rel:"me nofollow", itemprop: "url" do %>
-              <%= @user.website %>
-            <% end %>
-          </div>
-          <div class="new-user-page-profile_info_body">
-            <i class="fa fa-fw fa-building-o"></i>
-            <%= @user.company %>
-          </div>
-          <div class="new-user-page-profile_info_body">
-            <i class="fa fa-fw fa-map-marker"></i>
-            <%= @user.residence %>
-          </div>
+          <% if @user.email_checked == 1 %>
+            <div class="new-user-page-profile_info_body">
+              <i class="fa fa-fw fa-envelope"></i>
+              <%= link_to @user.email, "mailto:#{@user.email}"  %>
+            </div>
+          <% end %>
+          <% if @user.website.present? %>
+            <div class="new-user-page-profile_info_body">
+              <i class="fa fa-fw fa-link"></i>
+              <%= link_to @user.website, target: "_blank", rel:"me nofollow", itemprop: "url" do %>
+                <%= @user.website %>
+              <% end %>
+            </div>
+          <% end %>
+          <% if @user.company.present? %>
+            <div class="new-user-page-profile_info_body">
+              <i class="fa fa-fw fa-building-o"></i>
+              <%= @user.company %>
+            </div>
+          <% end %>
+          <% if @user.residence.present? %>
+            <div class="new-user-page-profile_info_body">
+              <i class="fa fa-fw fa-map-marker"></i>
+              <%= @user.residence %>
+            </div>
+          <% end %>
           <%= link_to edit_user_path(current_user), class: "new-user-page-profile_info_body-edit" do%>
             <i class="fa fa-cog"></i>
             プロフィールを編集する

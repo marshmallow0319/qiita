@@ -47,8 +47,6 @@
                 <%= f.label :email_checked, "公開メールアドレス"%>
                 <div class="checkbox">
                   <%= f.label :email_checked do %>
-<!--                     <input name="user[public_email]" type="hidden" value="0">
-                    <input type="checkbox" value="1" checked="checked" name="user[public_email]" id="user_public_email"> -->
                     <%= f.check_box :email_checked %>
                     メールアドレスを全体に公開する
                   <% end %>
