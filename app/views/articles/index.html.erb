@@ -47,30 +47,32 @@
             <a target="_blank" href="#">詳細を見る</a>
           </div>
         </div>
-        <div class="user-info">
-          <div class="user-info_left">
-            <%= link_to user_path(current_user) do %>
-              <%= image_tag current_user.avatar, class: "user-info_avatar" %>
-            <% end %>
-          </div>
-          <div class="user-info_right">
-            <div class="user-info_names">
-              <div class="user-info_url-name">
-                <%= link_to "#{current_user.username}", user_path(current_user)%>
+        <% if user_signed_in? %>
+          <div class="user-info">
+            <div class="user-info_left">
+              <%= link_to user_path(current_user) do %>
+                <%= image_tag current_user.avatar, class: "user-info_avatar" %>
+              <% end %>
+            </div>
+            <div class="user-info_right">
+              <div class="user-info_names">
+                <div class="user-info_url-name">
+                  <%= link_to "#{current_user.username}", user_path(current_user)%>
+                </div>
+              </div>
+              <div class="user-info_stats">
+                <div class="user-info_posts-count">
+                  0
+                  <span class="user-info_stats_unit">投稿</span>
+                </div>
+                <div class="user-info_contribution">
+                  <span class="user-info_contribution_value">0</span>
+                  <span class="user-info_stats_unit">Contribution</span>
+                </div>
               </div>
             </div>
-            <div class="user-info_stats">
-              <div class="user-info_posts-count">
-                0
-                <span class="user-info_stats_unit">投稿</span>
-              </div>
-              <div class="user-info_contribution">
-                <span class="user-info_contribution_value">0</span>
-                <span class="user-info_stats_unit">Contribution</span>
-              </div>
-            </div>
           </div>
-        </div>
+        <% end %>
         <nav class="category-navigation_menu">
           <a class="category-navigation_menu-item category-navigation_menu-item-selected" href="/">
             <i class="fa fa-fw fa-list-ul"></i>
