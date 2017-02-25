@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
    stocks.find_by(user_id: user)
   end
 
-  def likeed_user?(user)
+  def liked_user?(user)
    likes.find_by(user_id: user)
   end
 
