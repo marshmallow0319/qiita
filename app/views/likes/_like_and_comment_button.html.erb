@@ -1,0 +1,89 @@
+<% if article.liked_user?(current_user) %>
+  <div class="items-show-header-stock">
+    <ul class="list-unstyled items-show-header-stock_status-list">
+      <li>
+        <div class="items-show-header-stock_count stock">
+          <span class="fa fa-thumbs-up"></span>
+          <span class="js-likecount">
+            <%= article.likes.count %>
+          </span>
+        </div>
+        <div class="items-show-header-stock_count-text">いいね</div>
+      </li>
+      <li>
+        <div class="items-show-header-stock_count" content="0 UserComments" itemprop="interactionCount">
+          <span class="fa fa-comment"></span>
+          0
+        </div>
+        <div class="items-show-header-stock_count-text">コメント</div>
+      </li>
+    </ul>
+  </div>
+  <div class="js-like-button">
+    <div data-reactroot class="like-button">
+      <%= button_to article_like_path(article, like), method: "delete", class: "p-button liked", remote: true do %>
+        <span class="fa fa-fw fa-check"></span>
+        <span>いいね済み</span>
+      <% end %>
+    </div>
+  </div>
+  <ul class="list-inline article-main-header__users">
+    <% article.likes.each do |liker| %>
+      <li class="js-hovercard" data-hovercard-target-name="#{liker.user_id}">
+        <%= link_to user_path(liker.user_id), itemprop: "url" do %>
+          <%= image_tag liker.user.avatar, class: "thumb thumb--xs", alt: "#{liker.user_id}" %>
+        <% end %>
+      </li>
+    <% end %>
+<!--               リストを10個まで表示する。それ以上ある場合は下のリストからいいねした一覧ページへ飛ばす
+    <li>
+      <a href="ここはuser.username/articles/article.id/likers">
+        <span class="fa fa-ellipsis-h"></span>
+      </a>
+    </li> -->
+  </ul>
+<% else %>
+  <div class="items-show-header-stock">
+    <ul class="list-unstyled items-show-header-stock_status-list">
+      <li>
+        <div class="items-show-header-stock_count stock">
+          <span class="fa fa-thumbs-up"></span>
+          <span class="js-likecount">
+            <%= article.likes.count %>
+          </span>
+        </div>
+        <div class="items-show-header-stock_count-text">いいね</div>
+      </li>
+      <li>
+        <div class="items-show-header-stock_count" content="0 UserComments" itemprop="interactionCount">
+          <span class="fa fa-comment"></span>
+          0
+        </div>
+        <div class="items-show-header-stock_count-text">コメント</div>
+      </li>
+    </ul>
+  </div>
+  <div class="js-like-button">
+    <div data-reactroot class="like-button">
+      <%= button_to article_likes_path(article), class: "p-button", remote: true do %>
+        <span class="fa fa-fw fa-thumbs-up"></span>
+        <span>いいね</span>
+      <% end %>
+    </div>
+  </div>
+  <ul class="list-inline article-main-header__users">
+    <% article.likes.each do |liker| %>
+      <li class="js-hovercard" data-hovercard-target-name="#{liker.user_id}">
+        <%= link_to user_path(liker.user_id), itemprop: "url" do %>
+          <%= image_tag liker.user.avatar, class: "thumb thumb--xs", alt: "#{liker.user_id}" %>
+        <% end %>
+      </li>
+    <% end %>
+<!--               リストを10個まで表示する。それ以上ある場合は下のリストからいいねした一覧ページへ飛ばす
+    <li>
+      <a href="ここはuser.username/articles/article.id/likers">
+        <span class="fa fa-ellipsis-h"></span>
+      </a>
+    </li> -->
+  </ul>
+<% end %>

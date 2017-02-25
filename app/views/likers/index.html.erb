@@ -1,0 +1,51 @@
+<%= render "layouts/header" %>
+<div id="main">
+  <div class="article-main-header">
+    <div class="container"></div>
+    <div class="container">
+      <div class="row s-flex-align-center">
+        <div class="col-sm-9">
+          <h1 class="article-main-header__title">
+            ここは記事のタイトル
+          </h1>
+          <ul class="list-unstyled list-inline items-show-header-tags">
+            <!-- タグが登録されてたらここにタグが入る -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container item-likers">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li>
+          <a href="元の記事のurl">元記事のタイトル</a>
+        </li>
+        <li class="active">
+          Likers
+        </li>
+      </ol>
+      <ul class="grid-list">
+        <li class="media grid-list__user">
+          <a href="ユーザのshowページのリンク">
+            <img alt class="media__image thumb thumb--l" src="ユーザアイコン画像">
+          </a>
+          <div class="media__body">
+            <h4 class="user-info__name"></h4>
+            <div data-react-class="T.UserFollowButton" data-react-props="{"url_name":"tatata111","initial_followed_by":false,"size":"btn-xs","position":"author-info"}">
+              <span data-reactroot class="user-follow-button">
+                <button class="btn btn-default btn-block user-follow-button_inner btn-xs">
+                  <i class="i fa fa-user-plus"></i>
+                   フォロー
+                </button>
+              </span>
+            </div>
+          </div>
+        </li>
+        <!-- このliを20個まで表示、超えた場合はページネーションを表示 -->
+      </ul>
+      <div class="text-center"></div>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>
