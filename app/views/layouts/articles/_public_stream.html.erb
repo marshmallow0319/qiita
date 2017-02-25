@@ -43,14 +43,16 @@
                 </div>
                 <div class="item-status-box">
                   <ul class="unstyled">
-                    <li>
-                      <i class="fa fa-like"></i>
-                      0
-                      <!-- いいね・コメント機能実装時にここに表示 -->
-                    </li>
+                    <% if article.likes.present? %>
+                      <li>
+                        <i class="fa fa-thumbs-up"></i>
+                        <%= article.likes.count %>
+                      </li>
+                    <% end %>
                     <li>
                       <a href="#">
                         <i class="fa fa-comment-o"></i>
+                        <!--コメント機能実装時にここに表示 -->
                       </a>
                     </li>
                   </ul>

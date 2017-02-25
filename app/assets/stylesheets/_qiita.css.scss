@@ -2757,20 +2757,29 @@ img {
 .like-button {
     display: flex;
 
-    > .p-button {
-        flex-grow: 1;
-        min-width: 85px;
-        height: 32px;
-        border: 1px solid #ccc;
-        border-radius: 0.2em;
-        background-color: #fff;
-        color: #59bb0c;
-        transition: background-color 0.1s ease-out, color 0.1s ease-out;
+    > form {
 
-        &:hover {
-            border-color: #61933b;
-            background-color: #79b74a;
-            color: #fff;
+        > .p-button {
+            flex-grow: 1;
+            min-width: 85px;
+            height: 32px;
+            border: 1px solid #ccc;
+            border-radius: 0.2em;
+            background-color: #fff;
+            color: #59bb0c;
+            transition: background-color 0.1s ease-out, color 0.1s ease-out;
+
+            &:hover {
+                border-color: #61933b;
+                background-color: #79b74a;
+                color: #fff;
+            }
+
+            &.liked {
+                border-color: #61933b;
+                background-color: #79b74a;
+                color: #fff;
+            }
         }
     }
 
