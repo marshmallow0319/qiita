@@ -45,46 +45,8 @@
               </li>
             </ul>
           </div>
-          <div class="col-sm-3">
-            <div class="items-show-header-stock">
-              <ul class="list-unstyled items-show-header-stock_status-list">
-                <li>
-                  <div class="items-show-header-stock_count stock">
-                    <span class="fa fa-thumbs-up"></span>
-                    <span class="js-likecount">0</span>
-                  </div>
-                  <div class="items-show-header-stock_count-text">いいね</div>
-                </li>
-                <li>
-                  <div class="items-show-header-stock_count" content="0 UserComments" itemprop="interactionCount">
-                    <span class="fa fa-comment"></span>
-                    0
-                  </div>
-                  <div class="items-show-header-stock_count-text">コメント</div>
-                </li>
-              </ul>
-            </div>
-            <div class="js-like-button" data-props="{"like_status":false,"like_count":0,"uuid":"b04ec9a7721553537b77","likable_type":"Article","position":"article-header"}">
-              <div data-reactroot class="like-button">
-                <button class="p-button">
-                  <span class="fa fa-fw fa-thumbs-up"></span>
-                  <span>いいね</span>
-                </button>
-              </div>
-            </div>
-            <ul class="list-inline article-main-header__users">
-              <li class="js-hovercard" data-hovercard-target-name="ここはarticle.like.user_id">
-                <a itemprop="url" href="ここはarticle.like.user_id">
-                  <img alt="ここはarticle.like.user_id" class="thumb thumb--xs" src="ここはarticle.like.user.avatar">
-                </a>
-              </li>
-<!--               リストを10個まで表示する。それ以上ある場合は下のリストからいいねした一覧ページへ飛ばす
-              <li>
-                <a href="ここはuser.username/articles/article.id/likers">
-                  <span class="fa fa-ellipsis-h"></span>
-                </a>
-              </li> -->
-            </ul>
+          <div class="col-sm-3 js-like-and-comment-button">
+            <%= render partial: "likes/like_and_comment_button", locals: { article: @article, like: @like } %>
           </div>
         </div>
       </div>
