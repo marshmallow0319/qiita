@@ -84,3 +84,16 @@
 - updated_at :timestamp
 - user_id :integer
 - article_id :integer
+
+# liker
+
+## association
+`has_many :likes`
+`belongs_to :article`
+
+## table
+- id :integer
+- created_at :timestamp
+- updated_at :timestamp
+- like_id :integer
+- article_id :integer
