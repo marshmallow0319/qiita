@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @html = markdown.render(@article.text)
     @stock = @article.stocks.find_by(user_id: current_user.id)
+    @like = @article.likes.find_by(user_id: current_user.id)
   end
 
   def edit
