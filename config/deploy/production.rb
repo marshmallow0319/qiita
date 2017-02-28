@@ -59,3 +59,7 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+
+server '13.112.156.126', user: 'marshmallow', roles: %w{app db web}
+set :ssh_options, keys: '~/.ssh/qiita_key_pair_key_rsa'
