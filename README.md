@@ -97,3 +97,5 @@
 - updated_at :timestamp
 - like_id :integer
 - article_id :integer
+
+test
